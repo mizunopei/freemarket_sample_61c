@@ -8,8 +8,8 @@
 |address_id|references|foreign_key: true|
 |profile_id|references|foreign_key: true|
 ### Association
-- belongs_to :address
-- belongs_to :profile
+- has_one :address
+- has_one :profile
 - has_many :items
 - has_many :likes
 
@@ -77,23 +77,14 @@
 |condition|string|null: false|
 ### Association
 - belongs_to: user
-- belongs_to: bought_item
 - has_many :likes
 - has_many :commnets
 - belongs_to : brand
 - belongs_to :delivery_region
 - belongs_to :category
 
-## bought_itemsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|foreign_key: true|
-|item-id|references|foreign_key: true|
-### Association
-- belings_to :item
-- belongs_to :user
 
-## likeテーブル
+## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|foreign_key: true|
