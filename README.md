@@ -6,12 +6,12 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 ### Association
-- has_one :address
 - has_one :profile
 - has_many :items
 - has_many :likes
 
-## addressesテーブル
+
+## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |last_name|string|null: false|
@@ -24,13 +24,6 @@
 |address|string|null: false|
 |building_name|string|null: false|
 |building_tel|integer|null: false|
-|user_id|references|foreign_key: true|
-### Association
-- belongs_to :user
-
-## profilesテーブル
-|Column|Type|Options|
-|------|----|-------|
 |introduction|text|---|
 |avator|---|---|
 |sales|integer|---|
@@ -39,9 +32,15 @@
 - belongs_to :user
 
 
-## bank_acountsテーブル
+## bank_accountsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|bank_name|striing|null: false|
+|type|string|null: false|
+|code|integer|null: false|
+|number|integer|null: false|
+|last_name_kana|string|null: false|
+|firdt_name_kana|string|null: false|
 |user_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
