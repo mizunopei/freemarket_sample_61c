@@ -10,6 +10,7 @@
 ### Association
 - belongs_to :address
 - belongs_to :profile
+- has_many :items
 - has_many :likes
 
 ## addressesテーブル
@@ -24,7 +25,7 @@
 |city|string|null: false|
 |address|string|null: false|
 |building_name|string|null: false|
-|building_tel|string|null: false|
+|building_tel|integer|null: false|
 |user_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
@@ -72,11 +73,11 @@
 |image|text|null: false|
 |introduction|text|null: false|
 |price|integer|null: false|
-|size|text|null: false|
-|condition|text|null: false|
+|size|string|null: false|
+|condition|string|null: false|
 ### Association
 - belongs_to: user
-- belongs_to: bought_items
+- belongs_to: bought_item
 - has_many :likes
 - has_many :commnets
 - belongs_to : brand
