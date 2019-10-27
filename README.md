@@ -40,7 +40,7 @@
 |code|integer|null: false|
 |number|integer|null: false|
 |last_name_kana|string|null: false|
-|firdt_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |user_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
