@@ -5,8 +5,6 @@
 |nickname|string|null: false,unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|address_id|references|foreign_key: true|
-|profile_id|references|foreign_key: true|
 ### Association
 - has_one :address
 - has_one :profile
@@ -71,6 +69,7 @@
 |delivery_burden|string|null: false|
 |delivery_region_id|references|foreign_key: true|
 |image|text|null: false|
+|ancestry|string|---|
 |introduction|text|null: false|
 |price|integer|null: false|
 |size|string|null: false|
