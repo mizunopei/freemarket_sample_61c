@@ -1,2 +1,8 @@
 @import "config/reset";
 @import "items";
+@import "header";
+@import "font-awesome";
+@import "footer";
+* {
+  box-sizing: border-box;
+}

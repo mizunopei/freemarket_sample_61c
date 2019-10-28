@@ -1,0 +1,150 @@
+// .footer {
+//   padding: 60px 0;
+//   text-align: center;
+//   background-color: #212121;
+//   color: #fff;
+//   &__contents{
+//     display: flex;
+//     justify-content: space-around;
+//     margin: 0 auto;
+//     max-width: 1020px;
+//     &__links {
+//       width: 23%;
+//       &_title{
+//         font-size: 16px;
+//         font-weight: bold;
+//         line-height: 40px;
+//         margin: 0 0 24px;
+//       }
+//       &_link{
+//         line-height: 25px;
+//         list-style: none;
+//         margin: 2px 0;
+//         font-size: 14px;
+//         &:hover{
+//           text-decoration: underline;
+//           opacity: 0.7;
+//           color: #fff;
+//         }
+//         &_country{
+//           width: 22px;
+//           height: 22px;
+//           margin-right: 8px;
+//           vertical-align: middle;
+//         }
+//       }
+//     }
+//   }
+//   &__logo{
+//     margin: 40px 0 0;
+    
+
+//     &_text{
+//       font-size: 14px;
+//       margin: 8px 0 0;
+//     }
+//   }
+// }
+
+// .to-sell-btn{
+//   height: 160px;
+//   width: 160px;
+//   position: fixed;
+//   bottom: 32px;
+//   right: 32px;
+//   border-radius: 50%;
+//   background-color: #ea352d;
+//   text-align: center;
+//   &_text{
+//     display: block;
+//     color: #fff;
+//     font-size: 23px;
+//     margin: 32px auto 0;
+//   }
+//   &_icon{
+//     display: block;
+//     color: #fff;
+//     font-size: 60px;
+//     margin: 3px auto 0;
+//   }
+// }
+
+// .bx-wrapper {
+//   margin: 0 !important;
+//   -moz-box-shadow: none !important;
+//   -webkit-box-shadow: none !important;
+//   box-shadow: none !important;
+//   border: none !important;
+//   background: none !important;
+// }
+
+// .bx-pager {
+//   transform: translateY(-45px);
+// }
+
+
+
+.global-footer {
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  padding: 0px 20px 10px;
+  background: rgb(33, 33, 33);
+}
+
+.clearfix {
+  content: '';
+  display: flex;
+  clear: both;
+}
+
+.footer-cell {
+  padding: 0 20px 0 0;
+  width: 20%;
+  text-align: center;
+}
+
+.global-footer a {
+  color: #fff;
+  font-size: 12px;
+  line-height: 3em;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-right: 10px;
+  width: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.footer-copyright {
+  display: inline-block;
+  margin: 8px 0 0;
+  text-align: center;
+  vertical-align: sub;
+}
+
+.footer-copyright small {
+  font-size: 12px;
+}
+
+.custom-banner-dialogue {
+  background: #efefef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 15px 8px;
+  position: relative;
+  z-index: 1;
+}
+
