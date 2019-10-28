@@ -88,7 +88,7 @@
   font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   font-weight: 500;
   color: rgb(255, 255, 255);
-  padding: 0px 20px 10px;
+  padding: 0px 193px 10px;
   background: rgb(33, 33, 33);
 }
 
@@ -108,6 +108,7 @@
   color: #fff;
   font-size: 12px;
   line-height: 3em;
+  float: left;
 }
 
 .footer-logo {
@@ -118,13 +119,6 @@
 
 img {
   vertical-align: middle;
-}
-
-.footer-copyright {
-  display: inline-block;
-  margin: 8px 0 0;
-  text-align: center;
-  vertical-align: sub;
 }
 
 .footer-copyright small {
@@ -147,4 +141,15 @@ img {
   position: relative;
   z-index: 1;
 }
+.footer-bottom {
+  margin: 30px auto 20px;
+  width: 1020px;
+  text-align: center;
+}
 
+.footer-copyright {
+  display: inline-block;
+  margin: 8px 0 0;
+  text-align: center;
+  vertical-align: sub;
+}
