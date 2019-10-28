@@ -52,4 +52,4 @@ production:
   database: freemarket_sample_61c_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket:    /var/lib/musql/mysql.sock
+  socket:    /var/lib/mysql/mysql.sock
