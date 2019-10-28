@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
- get "items" => "items#index"
+ resources :items
 end
