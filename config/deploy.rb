@@ -5,9 +5,11 @@ set :application, "freemarket_sample_61c"
 set :repo_url, "git@github.com:mizunopei/freemarket_sample_61c.git"
 
 set :linked_dirs, fetch(:linked_dirs,[]).push("log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads")
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
 set :rbenv_type, :user
 set :rbenv_ruby, "2.5.1"
+
 
 set :ssh_options, auth_methods: ["publickey"],
                   keys: ["~/.ssh/mercari.pem"]
