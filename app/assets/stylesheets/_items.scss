@@ -22,28 +22,50 @@
 
 .app-banner {
   color: rgb(255, 255, 255);
-    background: url(https://cdn.pixabay.com/photo/2018/05/02/09/02/baby-boy-3368017_1280.jpg
-    );
+    background: url(download_bg_pc.jpg);
     background-position: center center;
     background-size:  cover;
-}
-.app-banner-mine {
-display: block;
-overflow: hidden;
-position: relative;
-display: none;
-width: 750px;
-height: 260px;
-margin: 0 auto;
-color: #fff;
+
+  .app-banner-mine {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 750px;
+  height: 260px;
+  margin: 0 auto;
+  color: #fff;
+  
+
+    .app-banner-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      display: flex;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      justify-content: center;
+
+      .clearfix {
+        content: '';
+        display: flex;
+        clear: both;
+        padding: 46px 0px 0 0px;
+    }
+  }
+  }
+
+
+
+  figure {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100%;
 }
 
-.app-banner-inner {
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
 }
-
 
