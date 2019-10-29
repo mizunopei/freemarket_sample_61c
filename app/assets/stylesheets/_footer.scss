@@ -88,7 +88,7 @@
   font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   font-weight: 500;
   color: rgb(255, 255, 255);
-  padding: 0px 193px 10px;
+  padding: 0px 142px 10px;
   background: rgb(33, 33, 33);
 }
 
@@ -96,12 +96,13 @@
   content: '';
   display: flex;
   clear: both;
+  padding: 37px 0 0 92px;
 }
 
 .footer-cell {
   padding: 0 20px 0 0;
-  width: 20%;
-  text-align: center;
+  // width: 20%;
+  // text-align: center;
 }
 
 .global-footer a {

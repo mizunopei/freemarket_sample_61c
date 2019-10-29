@@ -1,4 +1,49 @@
-* {
-
+.camp-main {
+  line-height: 1.4em;
+  color: #222;
+  background-color: #fff;
 }
+
+.camp-keyvisual {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 36px;
+
+  img {
+  width: auto;
+  max-width: 680px;
+  padding-top: 28px;
+  display: block;
+  width: 98%;
+  margin: 0 auto;
+  padding: 4px 0;
+  }
+}
+
+.app-banner {
+  color: rgb(255, 255, 255);
+    background: url(https://cdn.pixabay.com/photo/2018/05/02/09/02/baby-boy-3368017_1280.jpg
+    );
+    background-position: center center;
+    background-size:  cover;
+}
+.app-banner-mine {
+display: block;
+overflow: hidden;
+position: relative;
+display: none;
+width: 750px;
+height: 260px;
+margin: 0 auto;
+color: #fff;
+}
+
+.app-banner-inner {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
 

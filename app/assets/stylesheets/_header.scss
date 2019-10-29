@@ -4,7 +4,7 @@
   position: relative;
   z-index: 1001;
   background: #fff;
-}
+
 
 .header-inner {
   width: 1000px;
@@ -104,6 +104,10 @@ line-height: 1;
 
 .header-nav-box {
   margin: 8px 0 0;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-top: 8px;
 }
 
 .l-left {
@@ -154,4 +158,5 @@ content: '\e025';
 
 .icon-tag:before {
   content: '\e029';
+}
 }
