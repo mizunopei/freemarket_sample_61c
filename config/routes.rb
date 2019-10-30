@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   get 'signup/card', to: 'signups#card'
   get 'signup/complete', to: 'signups#complete'
   
+
+root "items#index"
+resources :items
+
 end
