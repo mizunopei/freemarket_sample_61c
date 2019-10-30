@@ -6,8 +6,8 @@ class SignupsController < ApplicationController
     render :login, layout: "signup"
   end
 
-  def signup
-    render :signup, layout: "signup"
+  def index
+    render :index, layout: "signup"
   end
   
   def registration
