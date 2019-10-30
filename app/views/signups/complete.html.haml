@@ -1,0 +1,35 @@
+.signup-wrapper
+  .signup-header
+    .header-logo
+      =link_to "#" do
+        =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
+    %nav.progress-bar.signup-bar
+      %ol
+        %li 
+          %p 会員情報
+          .progress-status.start.active.though
+        %li 
+          %p 電話番号認証
+          .progress-status.active.though
+        %li 
+          %p お届け先住所入力
+          .progress-status.active.though
+        %li 
+          %p 支払い方法
+          .progress-status.active.though
+        %li 
+          %p.active 完了
+          .progress-status.end.active.though.now
+  .regisration-main
+    %main.registration-main-container
+      .registration-main-container__header 会員登録完了
+      %section.registration-main-container__form
+        .registration-main-container__form__content
+          .complete-message
+            ありがとうございます。
+            %br
+            会員登録が完了しました。
+          %button.btn-default
+            メルカリをはじめる
+      .signup-banner
+        = image_tag "signup-banner.png"
