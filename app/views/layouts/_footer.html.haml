@@ -1,97 +1,19 @@
--# %footer
--#   .footer
--#     .footer__contents
--#       .footer__contents__links
--#         %h4.footer__contents__links_title メルカリについて
--#         %ul
--#           %li.footer__contents__links_link
--#             = link_to "会社概要（運営会社）", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "採用情報", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "プレスリリース", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "公式ブログ", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "メルカリロゴ利用ガイドライン", {}, style: "color:#fff"
-          
--#       .footer__contents__links
--#         %h4.footer__contents__links_title ヘルプ&ガイド
--#         %ul
--#           %li.footer__contents__links_link
--#             = link_to "メルカリガイド", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "楽々メルカリ便", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "ゆうゆうメルカリ便", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "大型メルカリ便", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "車体取引ガイド", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "メルカリあんしん・あんぜん宣言！", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "偽ブランド品撲滅への取り組み", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "メルカリボックス", {}, style: "color:#fff"
-          
--#       .footer__contents__links
--#         %h4.footer__contents__links_title プライバシーと利用規約
--#         %ul
--#           %li.footer__contents__links_link
--#             = link_to "プライバシーポリシー", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "メルカリ利用規約", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "あんしんスマホサポート制度に関する利用規約", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "コンプライアンスポリシー", {}, style: "color:#fff"
--#       .footer__contents__links
--#         %h4.footer__contents__links_title ___   
--#         %ul
--#           %li.footer__contents__links_link
--#             = link_to "個人データの安全管理にかかる基本方針", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "特定商取引に関する表記", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "資金決済法に基づく表示", {}, style: "color:#fff"
--#           %li.footer__contents__links_link
--#             = link_to "法令順守と犯罪仰止のために", {}, style: "color:#fff"
-
--#       .footer__contents__links
--#         %h4.footer__contents__links_title 国
--#         %ul
--#           %li.footer__contents__links_link
--#             日本          
--#           %li.footer__contents__links_link
--#             United States 
--#     .footer__logo
--#       .header-top
--#         %h1
--#           %a{:href => ""}
--#             %img{:alt => "mercari", :height => "36", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", :width => "134"}/
--#       %p.footer__logo_text
--#         %small ©️2019 Mercari
-        
--#   .new_item_path
--#     %span.to-sell-btn_text 出品
-  
 %footer
   .global-footer
     %nav.clearfix
       .footer-cell
         %h2.footer-head メルカリについて
         %ul
-          %li
-            %a{:href => ""} 会社概要（運営会社）
-          %li
-            %a{:href => ""} 採用情報
-          %li
-            %a{:href => ""} プレスリリース
-          %li
-            %a{:href => "", :target => "_blank"} 公式ブログ
-          %li
-            %a{:href => ""} メルカリロゴ利用ガイドライン
+          %li.footer__contents__links_link
+            = link_to "会社概要（運営会社）", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "採用情報", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "プレスリリース", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "公式ブログ", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "メルカリロゴ利用ガイドライン", {}, style: "color:#fff"
           %li.footer-social-link
             %a{:href => "", :target => "_blank"}
               %i.icon-twitter
@@ -101,46 +23,47 @@
       .footer-cell
         %h2.footer-head ヘルプ＆ガイド
         %ul
-          %li
-            %a{:href => ""} メルカリガイド
-          %li
-            %a{:href => ""} らくらくメルカリ便
-          %li
-            %a{:href => ""} ゆうゆうメルカリ便
-          %li
-            %a{:href => ""} 大型メルカリ便
-          %li
-            %a{:href => ""} 車体取引ガイド
-          %li
-            %a{:href => ""} メルカリあんしん・あんぜん宣言！
-          %li
-            %a{:href => ""} 偽ブランド品撲滅への取り組み
-          %li
-            %a{:href => ""} メルカリボックス
+          %li.footer__contents__links_link
+            = link_to "メルカリガイド", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "楽々メルカリ便", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "ゆうゆうメルカリ便", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "大型メルカリ便", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "車体取引ガイド", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "メルカリあんしん・あんぜん宣言！", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "偽ブランド品撲滅への取り組み", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "メルカリボックス", {}, style: "color:#fff"
       .footer-cell.full-width
         %h2.footer-head プライバシーと利用規約
         .inner-footer-cell
           %ul
-            %li
-              %a{:href => ""} プライバシーポリシー
-            %li
-              %a{:href => ""} メルカリ利用規約
-            %li
-              %a{:href => ""} あんしんスマホサポート制度に関する利用特約
-            %li
-              %a{:href => ""} コンプライアンスポリシー
+            %li.footer__contents__links_link
+              = link_to "プライバシーポリシー", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "メルカリ利用規約", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "あんしんスマホサポート制度に関する利用規約", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "コンプライアンスポリシー", {}, style: "color:#fff"
       .footer-cell.full-width
         %h2.footer-head 
         .inner-footer-cell
           %ul
-            %li
-              %a{:href => ""} 個人データの安全管理に係る基本方針
-            %li
-              %a{:href => ""} 特定商取引に関する表記
-            %li
-              %a{:href => ""} 資金決済法に基づく表示
-            %li
-              %a{:href => ""} 法令順守と犯罪抑止のために
+            %li.footer__contents__links_link
+              = link_to "個人データの安全管理にかかる基本方針", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "特定商取引に関する表記", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "資金決済法に基づく表示", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "法令順守と犯罪仰止のために", {}, style: "color:#fff"
+
       .footer-cell.footer-nav-lang
         %h2.footer-head 国
         %ul
@@ -154,3 +77,6 @@
         %img{:alt => "mercari", :height => "33", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?465897195", :width => "124"}/
       %span.footer-copyright
         %small © 2019 Mercari
+
+.new_item_path
+  %span.to-sell-btn_text 出品
