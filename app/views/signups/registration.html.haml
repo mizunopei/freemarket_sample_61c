@@ -1,0 +1,251 @@
+.signup-wrapper
+  .signup-header
+    .header-logo
+      %a{href:"#"}
+        %img{src: "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}
+    %nav.progress-bar.signup-bar
+      %ol
+        %li 
+          %p.active 会員情報
+          .progress-status.start.active
+        %li 
+          %p 電話番号認証
+          .progress-status
+        %li 
+          %p お届け先住所入力
+          .progress-status
+        %li 
+          %p 支払い方法
+          .progress-status
+        %li 
+          %p 完了
+          .progress-status.end
+  .regisration-main
+    %main.registration-main-container
+      %h2.registration-main-container__header 会員情報登録
+      %section.registration-main-container__form
+        .registration-main-container__form__content
+          .registration-main-container__form__content_group
+            %label ニックネーム
+            %span.form-require 必須
+            %input.input-default{type: "text", value: "", placeholder: "例）メルカリ太郎"}
+          .registration-main-container__form__content__group
+            %label メールアドレス
+            %span.form-require 必須
+            %input.input-default{type: "email", value: "", placeholder: "PC・携帯どちらでも可"}
+          .registration-main-container__form__content__group
+            %label パスワード
+            %span.form-require 必須
+            %input.input-default{type: "password", value: "", placeholder: "７文字以上"}
+          .registration-main-container__form__content__group
+            %label パスワード(確認)
+            %span.form-require 必須
+            %input.input-default{type: "password", value: "", placeholder: "７文字以上"}
+          .registration-main-container__form__content__group
+            %h3 本人確認
+            %p
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .registration-main-container__form__content__group
+            %div
+              %label お名前(全角)
+              %span.form-require 必須
+            .half-content
+              %input.input-default.half{type: "text", value: "", placeholder: "例)山田"}
+              %input.input-default.half{type: "text", value: "", placeholder: "例)彩"}
+          .registration-main-container__form__content__group
+            %div
+              %label お名前カナ(全角)
+              %span.form-require 必須
+            .half-content
+              %input.input-default.half{type: "text", value: "", placeholder: "例)ヤマダ"}
+              %input.input-default.half{type: "text", value: "", placeholder: "例)アヤ"}
+          .registration-main-container__form__content__group
+            %div
+              %label 生年月日
+              %span.form-require 必須
+            .signup-select
+              %label.signup-select__content.birth
+                =fa_icon 'angle-down', class: "select-icon"
+                %select.select-default
+                  %option --
+                  %option 2019
+                  %option 2018
+                  %option 2017
+                  %option 2016
+                  %option 2015
+                  %option 2014
+                  %option 2013
+                  %option 2012
+                  %option 2011
+                  %option 2010
+                  %option 2009
+                  %option 2008
+                  %option 2007
+                  %option 2006
+                  %option 2005
+                  %option 2004
+                  %option 2003
+                  %option 2002
+                  %option 2001
+                  %option 2000
+                  %option 1999
+                  %option 1998
+                  %option 1997
+                  %option 1996
+                  %option 1995
+                  %option 1994
+                  %option 1993
+                  %option 1992
+                  %option 1991
+                  %option 1990
+                  %option 1989
+                  %option 1988
+                  %option 1987
+                  %option 1986
+                  %option 1985
+                  %option 1984
+                  %option 1983
+                  %option 1982
+                  %option 1981
+                  %option 1980
+                  %option 1979
+                  %option 1978
+                  %option 1977
+                  %option 1976
+                  %option 1975
+                  %option 1974
+                  %option 1973
+                  %option 1972
+                  %option 1971
+                  %option 1970
+                  %option 1969
+                  %option 1968
+                  %option 1967
+                  %option 1966
+                  %option 1965
+                  %option 1964
+                  %option 1963
+                  %option 1962
+                  %option 1961
+                  %option 1960
+                  %option 1959
+                  %option 1958
+                  %option 1957
+                  %option 1956
+                  %option 1955
+                  %option 1954
+                  %option 1953
+                  %option 1952
+                  %option 1951
+                  %option 1950
+                  %option 1949
+                  %option 1948
+                  %option 1947
+                  %option 1946
+                  %option 1945
+                  %option 1944
+                  %option 1943
+                  %option 1942
+                  %option 1941
+                  %option 1940
+                  %option 1939
+                  %option 1938
+                  %option 1937
+                  %option 1936
+                  %option 1935
+                  %option 1934
+                  %option 1933
+                  %option 1932
+                  %option 1931
+                  %option 1930
+                  %option 1929
+                  %option 1928
+                  %option 1927
+                  %option 1926
+                  %option 1925
+                  %option 1924
+                  %option 1923
+                  %option 1922
+                  %option 1921
+                  %option 1920
+                  %option 1919
+                  %option 1918
+                  %option 1917
+                  %option 1916
+                  %option 1915
+                  %option 1914
+                  %option 1913
+                  %option 1912
+                  %option 1911
+                  %option 1910
+                  %option 1909
+                  %option 1908
+                  %option 1907
+                  %option 1906
+                  %option 1905
+                  %option 1904
+                  %option 1903
+                  %option 1902
+                  %option 1901
+                  %option 1900
+              %span 年
+              .signup-select__content.birth
+                =fa_icon 'angle-down'
+                %select.select-default
+                  %option --
+                  %option 1
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+                  %option 10
+                  %option 11
+                  %option 12
+              %span 月
+              .signup-select__content.birth
+                =fa_icon 'angle-down'
+                %select.select-default
+                  %option --
+                  %option 1
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+                  %option 10
+                  %option 11
+                  %option 12
+                  %option 13
+                  %option 14
+                  %option 15
+                  %option 16
+                  %option 17
+                  %option 18
+                  %option 19
+                  %option 20
+                  %option 21
+                  %option 22
+                  %option 23
+                  %option 24
+                  %option 25
+                  %option 26
+                  %option 27
+                  %option 28
+                  %option 29
+                  %option 30
+                  %option 31
+              %span 日
+          %p.registration-caution
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .registration-main-container__form__content__group
+            %p.registration-consensus
+            「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします 
+            %button.btn-default
+              次へ進む
