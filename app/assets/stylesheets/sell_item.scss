@@ -1,0 +1,24 @@
+.sell-main{
+  width: 700px;
+  margin: 0 auto;
+  .sell-container{
+    .sell__head{
+      text-align: center;
+      line-height: 1.5;
+      font-size: 18px;
+      padding: 10px;
+      .sell-form{
+        border-top :1px solid #eee;
+      }
+      .sell-upload__box{
+        width: 620px;
+        padding: 40px;
+      }
+      .sell-upload__image-box{
+        background-color: white;
+        border: 1px dashed red;
+      }
+      
+    }
+  }
+}
