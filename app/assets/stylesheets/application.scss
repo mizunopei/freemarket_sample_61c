@@ -3,6 +3,5 @@
 @import "header";
 @import "font-awesome";
 @import "footer";
-* {
-  box-sizing: border-box;
-}
+@import "mixin/mixin";
+@import "itembox";
