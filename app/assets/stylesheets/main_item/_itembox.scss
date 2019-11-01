@@ -3,10 +3,8 @@
   margin: 0 auto;
   content: '';
   display: flex;
-  clear: both;
-  
+  clear: both; 
 }
-
 .items-box {
   position: relative;
   float: left;
@@ -35,7 +33,6 @@
   width: 100%;
   height: 210px;
 }
-
 .items-box-body {
   position: relative;
   height: 20px;
@@ -44,7 +41,6 @@
 .items-box-name {
   font-size: 14px;
 }
-
 .items-box-num {
   display: -webkit-box;
   display: -ms-flexbox;

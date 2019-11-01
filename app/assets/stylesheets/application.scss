@@ -2,11 +2,11 @@
 @import "font-awesome";
 @import "config/reset";
 @import "config/colors";
-@import "items";
+@import "main_item/items";
 @import "header";
 @import "footer";
 @import "mixin/mixin";
-@import "itembox";
+@import "main_item/itembox";
 @import "./signups";
 
 body{

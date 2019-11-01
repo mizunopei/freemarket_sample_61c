@@ -1,6 +1,5 @@
 .default-container
   = render 'layouts/header'
-
   .content
     %main.camp-main.camp-page-index{:role => "main"}
     %section.camp-keyvisual
@@ -108,7 +107,6 @@
           .items-box-num
             .items-box-price.font-5 ¥700
             .font-2
-
   .item__main
     .item__main__genre
       %h3.item__main__genre--name メンズ新着アイテム
@@ -121,8 +119,7 @@
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
             .items-box-price.font-5 ¥700
-            .font-2
-  
+            .font-2  
   .item__main
     .item__main__genre
       %h3.item__main__genre--name 家電・スマホ・カメラ新着アイテム
@@ -149,22 +146,18 @@
   .item__main__genre
     %h3.item__main__genre--name シャネル新着アイテム
     %a.item__main__genre--sub もっと見る
-
 .item__main
   .item__main__genre
     %h3.item__main__genre--name ルイヴィトン新着アイテム
     %a.item__main__genre--sub もっと見る
-
 .item__main
   .item__main__genre
     %h3.item__main__genre--name シュプリーム新着アイテム
     %a.item__main__genre--sub もっと見る
-
 .item__main
   .item__main__genre
     %h3.item__main__genre--name ナイキ新着アイテム
-    %a.item__main__genre--sub もっと見る
-    
+    %a.item__main__genre--sub もっと見る   
 %aside
 .app__banner
   .app__banner__mine
@@ -183,5 +176,4 @@
             = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?465897195", width:'133', height:'40', alt:"")
     %figure
       = link_to image_tag("sumaho.png", height:'300', width:'260', alt:"")
-
 =render 'layouts/footer'
