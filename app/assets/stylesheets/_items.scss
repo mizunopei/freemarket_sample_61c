@@ -116,9 +116,9 @@
 
 .app__banner {
   color: rgb(255, 255, 255);
-    background: url(download_bg_pc.jpg);
-    background-position: center center;
-    background-size:  cover;
+  background: url(download_bg_pc.jpg);
+  background-position: center center;
+  background-size:  cover;
 
   &__mine {
   display: block;
@@ -129,7 +129,7 @@
   margin: 0 auto;
   color: #fff;
 
-    &_inner {
+    &__inner {
       position: absolute;
       top: 50%;
       left: 0;
@@ -139,24 +139,25 @@
       flex-direction: column;
       -webkit-box-pack: center;
       justify-content: center;
-    
-      .clearfix {
-        content: '';
-        display: flex;
-        clear: both;
-        padding: 46px 0px 0 0px;
-    }
+  
     &_flm{
     color: rgb(255, 255, 255);
     font-size: 24px;
     font-weight: 600;
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
     }
     &_doun{
     color: rgb(255, 255, 255);
     font-size: 35px;
     margin-bottom: 20px;
     }
+    
+    .image__link {
+      content: '';
+      display: flex;
+      clear: both;
+      padding: 46px 0px 0 0px;
+      }
   }
 
   
