@@ -5,20 +5,42 @@
     .sell__head{
       text-align: center;
       line-height: 1.5;
-      font-size: 18px;
-      padding: 10px;
+      font-size: 22px;
+      padding: 32px 16px;
+    }
       .sell-form{
-        border-top :1px solid #eee;
-      }
-      .sell-upload__box{
-        width: 620px;
-        padding: 40px;
-      }
-      .sell-upload__image-box{
-        background-color: white;
-        border: 1px dashed red;
-      }
-      
+        border-top :1px solid red;
+        .sell-upload__box{
+            background-color: aqua;
+            width: 620px;
+            padding: 40px;
+            position: relative;
+            .sell-upload__head {
+              font-size: 16px;
+            }      
+        .sell-upload__image-box{
+          background-color: red;
+          border: 1px dashed white;
+          min-height: 162px;
+          text-align: center;
+          cursor: pointer;
+          input.sell-upload__file{
+            -webkit-appearance: none;
+            border: 0;
+            outline: 0;
+            font: 400 11px system-ui;
+            font-family: inherit;
+            // display: none;
+            touch-action: auto;
+          }
+          .visible-pc{
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            right: 16px;
+          }
+        }
+        }
+    }
     }
   }
-}
