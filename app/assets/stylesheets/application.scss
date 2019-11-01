@@ -1,6 +1,12 @@
+
 @import "font-awesome";
 @import "config/reset";
 @import "config/colors";
+@import "main_item/items";
+@import "header";
+@import "footer";
+@import "mixin/mixin";
+@import "main_item/itembox";
 @import "./signups";
 
 body{
@@ -18,3 +24,4 @@ a{
     color: #888;
   }
 }
+
