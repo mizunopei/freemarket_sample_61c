@@ -6,19 +6,22 @@
           = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", height: '36', width: '134', alt:"")
         %form.header-form{action:""}
           %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-          %i.icon-search
+          .icon-search
+            = fa_icon 'search', class: "icon_search"
       .header-nav-box  
         .l-left
           %ul.header-nav
             %li
               %h2
                 %a.header-nav-root.list-parent{href: ""}
-                  %i.icon-list.header-cat-brand-icon
+                  .icon-list.header-cat-brand-icon
+                  = fa_icon 'list', class: "icon_list"
                   %span カテゴリーから探す
             %li
               %h2
                 %a.header-nav-root.list-parent{href: ""}
                   %i.icon-tag.header-cat-brand-icon
+                  = fa_icon 'tag', class: "icon_tag"
                   %span ブランドから探す             
         .l-right
           %ul.header-login-nav
