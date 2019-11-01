@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end  
   
-
+resources :users
 root "items#index"
 resources :items
 
