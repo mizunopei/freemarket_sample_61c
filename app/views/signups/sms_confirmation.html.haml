@@ -1,0 +1,36 @@
+.signup-wrapper
+  .signup-header
+    .header-logo
+      =link_to "#" do
+        =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
+    %nav.progress-bar.signup-bar
+      %ol
+        %li 
+          %p 会員情報
+          .progress-status.start.active.though
+        %li 
+          %p.active 電話番号認証
+          .progress-status.active.though.now
+        %li 
+          %p お届け先住所入力
+          .progress-status
+        %li 
+          %p 支払い方法
+          .progress-status
+        %li 
+          %p 完了
+          .progress-status.end
+  .regisration-main
+    %main.registration-main-container
+      .registration-main-container__header 電話番号の確認
+      %section.registration-main-container__form
+        .registration-main-container__form__content
+          .registration-main-container__form__content_group
+            %label 携帯電話の番号
+            %input.input-default{type: "tel", value: "", placeholder: "携帯電話の番号を入力"}
+            %p.registration-consensus
+            本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+            %button.btn-default
+              SMSを送信する
+            %p.registration-consensus
+            ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
