@@ -1,0 +1,339 @@
+// Place all the styles related to the signups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.signup-wrapper{ 
+  height: 100%;
+  &.signup{
+    min-height: 100vh;
+  }
+}
+
+.signup-header{
+  height: 128px;
+  text-align: center;
+  & .header-logo{
+    margin: 40px 0 0;
+    display: inline-block;
+  & img{
+    width: 185px;
+  }
+ }
+}
+.login-wrapper{
+  width: 456px;
+  margin: 0 auto;
+  background: #fff;
+  &__no-account-container{
+    padding: 40px 64px;
+    text-align: center;
+    border-bottom: 1px solid $bg-deafult;
+  }
+  &__sns-login-container{
+    padding: 32px 64px;
+    text-align: center;
+  }
+  &__mail-login-container{
+    padding: 24px 64px 50px;
+    text-align: center;
+  }
+}
+
+.progress-bar{
+  padding: 40px 0 0 44px;
+  border: 0;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  & li{
+    margin: 0 40px 5px 0;
+    min-width: 60px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    font-size: 12px;
+    color: #888;
+    & p{
+      font-size: 14px;
+      margin-bottom: 5px;
+      font-weight: 500;
+      &.active{
+      color: #ea352d;
+      font-weight: 600;
+      }
+    }
+    & .progress-status{
+      width: 14px;
+      height: 14px;
+      margin: auto;
+      display: block;
+      background: #ccc;
+      border-radius: 50%;
+      &.active{
+        background: #ea352d;
+      }
+      &:before{
+        position: absolute;
+        bottom: 5px;
+        right: 37px;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #ccc;
+      }
+      &.address:before{
+        right: 50px;
+      }
+      &.start:before{
+        display: none;
+      }
+      &.though:before
+      {
+        background: #ea352d;
+      }
+      &:after{
+        position: absolute;
+        bottom: 5px;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #ccc;
+        z-index: -1;
+      }
+      &.end:after{
+        display: none;
+      }
+      &.though:after{
+        background: red;
+      }
+      &.now.though:after{
+        background: #ccc;
+      }
+    }
+  }
+}
+
+.registration-main-container{
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  &__header{
+    font-size: 25px;
+    padding: 32px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid $bg-deafult;
+    line-height: 1.5;
+  }
+  & h3{
+    font-size: 18px;
+    font-weight: 600;
+  }
+  &__form{
+    padding: 40px 40px 64px;
+    & label{
+      font-weight: 600;
+    }
+    &--signup{
+      padding: 0 40px 64px;
+    }
+    &__content{
+      margin: 0 auto;
+      max-width: 343px;
+      &__group{
+        margin: 30px 0 0;
+        &:first-child{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.form-require{
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  background: #ea352d;
+  color: #fff;
+  font-size: 14px;
+  &.any{
+    background: #D3D3D3;
+    color: #fff;
+  }
+}
+.input-default{
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  padding: 10px 16px 8px;
+  margin: 8px 0 0;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  font-size: 16px;
+  &.login{
+    margin-bottom: 15px;
+  }
+  &.half{
+    width: calc(50% - 6px);
+  }
+}
+.half-content{
+  display: flex;
+  justify-content: space-between;
+}
+.signup-select{
+  & span{
+    display: inline-block;
+    margin: 0 5px;
+  }
+  &__content{
+    &.birth{
+      width: 76px;
+      margin: 8px 0 0 0;
+      position: relative;
+      display: inline-block;
+      font-weight: normal;
+      z-index: 0;
+    }
+    &.address{
+      position: relative;
+      z-index: 0;
+      & i{
+        font-size: 30px;
+        position: absolute;
+        top: 30%;
+        right: 10px;
+        color: #888;
+        z-index: 0;
+      }
+    }
+    &.card{
+      width: calc(50% - 35px);
+      margin: 8px 0 0 0;
+      position: relative;
+      display: inline-block;
+      z-index: 0;
+    }
+    & i{
+      font-size: 30px;
+      position: absolute;
+      top: 20%;
+      right: 10px;
+      color: #888;
+      z-index: -1;
+    }
+  }
+}
+select{
+  -webkit-appearance: none;
+}
+.select-default{
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  background: 0;
+  border: 1px solid #ccc;
+}
+.btn-default{
+  margin: 40px 0 0;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  &.new-account{
+    margin: 5px 0 0;
+    border: 1px solid #0099e8;
+    background: #0099e8;
+  }
+  &.login{
+    margin: 15px 0 0;
+    font-size: 1５px;
+    &:first-child{
+      margin: 0;
+    }
+  }
+  &.signup{
+    margin: 20px 0 0;
+    border-radius: 5px;
+    font-size: 16px;
+    &:first-child{
+      margin: 40px 0 0;
+    }
+  }
+  &.facebook{
+    background: #385185;
+    border: 1px solid #979797;
+  }
+  &.google{
+    background: #fff;
+    border: 1px solid #979797;
+    color: #333;
+  }
+}
+.signup-icon{
+  position: absolute;
+  top: 25%;
+  left: 16px;
+  font-size: 30px;
+}
+.signup-footer{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  text-align: center;
+  & nav{
+    width: 100%;
+    margin-top: 40px;
+  }
+  ul{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  & li{
+    display: inline-block;
+  }
+  & a{
+    font-size: 14px;
+  }
+  &__logo{
+    margin: 40px auto 0;
+    & img{
+      display: block;
+      margin: auto;
+    }
+  }
+  & p{
+    margin-top: 5px;
+    font-size: 14px;
+  }
+}
+.registration-caution{
+  margin: 8px 0 0;
+  color: #888;
+  font-size: 15px;
+}
+.registration-consensus{
+  font-size: 10px;
+}
+.complete-message{
+  text-align: center;
+}
+.signup-banner{
+  width: 100%;
+  & img{
+    width: 100%;
+  }
+}
+.signup-footer{
+  background-color: $bg-deafult;
+}

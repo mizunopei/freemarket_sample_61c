@@ -1,6 +1,32 @@
+
+
+@import "font-awesome";
 @import "config/reset";
+@import "config/colors";
+@import "main_item/items";
+@import "header";
+@import "footer";
+@import "mixin/mixin";
+@import "main_item/itembox";
+@import "./signups";
 @import "mypage/mypage-side";
 @import "mypage/mypage-content";
 @import "mypage";
+
+body{
+  font-family:'Source Sans Pro', Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: rgb(51, 51, 51);
+  background: $bg-deafult;
+  position: relative;
+}
+
+a{
+  text-decoration: none;
+  color: #333;
+  &:hover{
+    text-decoration: underline;
+    color: #888;
+  }
+}
 
 
