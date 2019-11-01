@@ -1,0 +1,18 @@
+.main-container
+  =render 'users/shared/mypage-side-bar'
+
+  .mypage-content
+    %section.mypage-content__user-icon
+      = link_to '#' do
+        %figure
+          = image_tag 'member_photo_noimage_thumb.png', size: '60x60'
+        %h2.mypage-content__user-name
+          うみすけ
+        .mypage-content__numbers
+          .mypage-content__rating
+            評価  0
+          .mypage-content__items
+            出品数  0
+
+    =render 'users/shared/mypage-main-tabs'
+    =render 'users/shared/mypage-second-tabs'
