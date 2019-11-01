@@ -1,10 +1,10 @@
 .default-container
   = render 'layouts/header'
   .content
-    %main.camp-main.camp-page-index{:role => "main"}
+    %main.camp-main.camp-page-index{role: "main"}
     %section.camp-keyvisual
       %h2
-        %img{:alt => "メルカリなら新品も中古もお得！キャンプ用品 大特集！", :src => "//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195"}/
+        =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195")
     .item__content
       %h2.item__content__header 人気のカテゴリー
       .item__box
@@ -20,11 +20,12 @@
   .item__main
     .item__main__genre
       %h3.item__main__genre--name レディース新着アイテム
-      %a.item__main__genre--sub もっと見る
+      .item__main__genre--sub
+        = link_to "もっと見る", href: ""
     .items-box-content.clearfix.category-brand-list  
       %section.items-box
         %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
         .items-box-body
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
@@ -34,7 +35,7 @@
               -# %span 1
       %section.items-box
         %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
         .items-box-body
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
@@ -42,7 +43,7 @@
             .font-2
       %section.items-box
         %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
         .items-box-body
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
@@ -50,7 +51,7 @@
             .font-2
       %section.items-box
         %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
         .items-box-body
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
@@ -58,7 +59,7 @@
             .font-2
       %section.items-box
         %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
         .items-box-body
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
@@ -67,7 +68,7 @@
     .items-box-content.clearfix.category-brand-list  
       %section.items-box
         %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
         .items-box-body
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
@@ -77,7 +78,15 @@
               -# %span 1
       %section.items-box
         %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
+        .items-box-body
+          %h3.items-box-name.font-2 【GU】ニット　L size
+          .items-box-num
+            .items-box-price.font-5 ¥700
+            .font-2
+      %section.items-box
+        %figure.items-box-photo
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
         .items-box-body
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
@@ -93,15 +102,7 @@
             .font-2
       %section.items-box
         %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-      %section.items-box
-        %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
         .items-box-body
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
@@ -110,11 +111,12 @@
   .item__main
     .item__main__genre
       %h3.item__main__genre--name メンズ新着アイテム
-      %a.item__main__genre--sub もっと見る
+      .item__main__genre--sub
+        = link_to "もっと見る", href: ""
     .items-box-content.clearfix.category-brand-list  
       %section.items-box
         %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
+          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
         .items-box-body
           %h3.items-box-name.font-2 【GU】ニット　L size
           .items-box-num
@@ -123,12 +125,14 @@
   .item__main
     .item__main__genre
       %h3.item__main__genre--name 家電・スマホ・カメラ新着アイテム
-      %a.item__main__genre--sub もっと見る
+      .item__main__genre--sub
+        = link_to "もっと見る", href: ""
 
   .item__main
     .item__main__genre
       %h3.item__main__genre--name おもちゃ・ホビー・グッズ新着アイテム
-      %a.item__main__genre--sub もっと見る
+      .item__main__genre--sub
+        = link_to "もっと見る", href: ""
 
   .item__content
     %h2.item__content__header 人気のブランド
@@ -145,19 +149,23 @@
 .item__main
   .item__main__genre
     %h3.item__main__genre--name シャネル新着アイテム
-    %a.item__main__genre--sub もっと見る
+    .item__main__genre--sub
+      = link_to "もっと見る", href: ""
 .item__main
   .item__main__genre
     %h3.item__main__genre--name ルイヴィトン新着アイテム
-    %a.item__main__genre--sub もっと見る
+    .item__main__genre--sub
+      = link_to "もっと見る", href: ""
 .item__main
   .item__main__genre
     %h3.item__main__genre--name シュプリーム新着アイテム
-    %a.item__main__genre--sub もっと見る
+    .item__main__genre--sub
+      = link_to "もっと見る", href: ""
 .item__main
   .item__main__genre
     %h3.item__main__genre--name ナイキ新着アイテム
-    %a.item__main__genre--sub もっと見る   
+    .item__main__genre--sub
+      = link_to "もっと見る", href: ""
 %aside
 .app__banner
   .app__banner__mine
