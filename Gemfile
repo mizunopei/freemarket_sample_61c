@@ -75,4 +75,5 @@ gem 'font-awesome-rails'
 
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'active_hash'
 
