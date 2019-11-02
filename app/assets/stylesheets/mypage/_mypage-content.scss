@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    a {
+    a{
       text-decoration: none;
       display: block;
       position: absolute;
@@ -19,10 +19,10 @@
       transform: translate(0, -50%);
       color: #333;
     }
-    a:hover {
+    a:hover{
       text-decoration: underline;
     }
-    figure {
+    figure{
       overflow: hidden;
       width: 60px;
       height: 60px;
@@ -173,6 +173,25 @@
     text-align: center;
     font-size: 16px;
     color: #ccc;
-    
   }
+  &__chapter-container{
+    background: #fff;
+  }
+  &__single-inner{
+    padding: 64px;
+  }
+  &__single-content{
+    text-align: center;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+.logouts__btn-red{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+}
 }

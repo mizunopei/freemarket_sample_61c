@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     end
   end  
   
-resources :users
+  resources :users do
+    collection do
+      get 'logout'
+    end
+  end
 root "items#index"
 resources :items
 
