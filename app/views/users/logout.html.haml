@@ -1,0 +1,11 @@
+=render 'layouts/header'
+.main-container
+  =render 'users/shared/mypage-side-bar'
+  .mypage-content
+    .mypage-content__chapter-container
+      .mypage-content__single-inner
+        .mypage-content__single-content
+          = link_to '#', class: 'logouts__btn-red' do
+            ログアウト
+
+=render 'layouts/footer'
