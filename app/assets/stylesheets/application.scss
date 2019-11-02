@@ -4,6 +4,7 @@
 @import "config/reset";
 @import "config/colors";
 @import "main_item/items";
+@import "main_item/show";
 @import "header";
 @import "footer";
 @import "mixin/mixin";
@@ -12,6 +13,7 @@
 @import "mypage/mypage-side";
 @import "mypage/mypage-content";
 @import "mypage";
+
 
 body{
   font-family:'Source Sans Pro', Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
