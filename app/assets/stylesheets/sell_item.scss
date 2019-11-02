@@ -1,6 +1,7 @@
 .sell-main{
   width: 700px;
   margin: 0 auto;
+  background-color: $white;
   .sell-container{
     .sell__head{
       text-align: center;
@@ -9,38 +10,178 @@
       padding: 32px 16px;
     }
       .sell-form{
-        border-top :1px solid red;
+        @include sell-border-top;
         .sell-upload__box{
-            background-color: aqua;
             width: 620px;
             padding: 40px;
             position: relative;
             .sell-upload__head {
               font-size: 16px;
-            }      
+            }
         .sell-upload__image-box{
-          background-color: red;
-          border: 1px dashed white;
+          background: #f5f5f5;
+          border: 1px dashed #ccc;
           min-height: 162px;
+          width: 620px;
           text-align: center;
           cursor: pointer;
-          input.sell-upload__file{
-            -webkit-appearance: none;
-            border: 0;
-            outline: 0;
-            font: 400 11px system-ui;
-            font-family: inherit;
-            // display: none;
+          display: block;
+          margin: 16px auto 0;
+          .sell-upload__file{
+            display: none;
             touch-action: auto;
           }
           .visible-pc{
             position: absolute;
-            top: 50%;
+            top: 55%;
             left: 16px;
             right: 16px;
           }
         }
+     }
+     .sell-content{
+       padding: 40px;
+       @include sell-border-top;
+       .form-group:first-child{
+        margin: 0;
+       }
+       .form-group{
+        margin: 40px 0 0;
+         & .price-bar{
+           height: 55px;
+           line-height: 10px;
+         }
+         .input-box{
+           padding: 10px 16px 8px;
+           border-radius: 4px;
+           @include sell__box-border;
+           line-height: 1.5;
+           font-size: 16px;
+           width: 98%;
+         }
+         .text-box{
+           display: block;
+           width: 100%;
+           max-width: 100%;
+           min-height: 104px;
+           padding: 10px;
+           font-size: 16px;
+           line-height: 1.5;
+           @include sell__box-border;
+         }
+       }
+     }
+    }.sell-content.clearfix{
+      @include clearfix;
+      .sell-sub__head{
+        color: #888;
+        font-size: 14px;
+        .question{
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background-color: $light-blue;
+          color: $white;
+          font-size: 12px;
+          text-align: center;
+          line-height: 14px;
         }
-    }
+      }
+      .sell-form__box{
+        float: right;
+        width: 400px;
+        margin: 0;
+        .select-bar{
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 4px;
+          @include sell__box-border;
+          width: 100%;
+          background-color: $white;
+        }
+        .sell-price{
+          // width: 50%;
+          & li{
+            padding: 24px 0;
+            border-top: 1px solid #ccc;
+            &:first-child{
+              padding: 0 0 24px;
+              border: 0;
+            }
+          }
+          .price-bar.bold{
+            font-weight: bold;
+          }
+          .l-left{
+            float: left;
+          }
+          .l-right{
+            float: right;
+            text-align: right;
+          }
+          .l-left, .l-right{
+            width: 50%;
+          }
+          .sell-price__input{
+            display: flex;
+           .yen{
+            font-size: 15px;
+            padding-top: 22px;
+            padding-right: 2px;
+           }
+          }
+          .price{
+            box-sizing: border-box;
+            height: 55px;
+            text-align: right;
+            padding: 10px 10px 8px;
+            border-radius: 4px;
+            @include sell__box-border;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+      }
     }
   }
+  .sell-content{
+    @include sell-border-top;
+    padding: 40px;
+    .caution{
+      .caution-link{
+        color: $light-blue;
+      }
+    }
+  }.sell-button{
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    line-height: 48px;
+    font-size: 14px;
+    color: $white;
+    transition: all  0.3s ease;
+  }
+  .red-button{
+    background-color: $btn-red;
+    border: 1px solid $btn-red;
+    width: 100%;
+    margin-top: 40px;
+  }
+  .red-button:hover{
+    background-color: #dc362d;
+  }
+  .gray-button{
+    text-decoration: none;
+    width: 45%;
+    margin: 24px auto 0;
+    background-color: $btn-gray;
+    border: 1px solid $btn-gray;
+  }
+  .gray-button:hover{
+    opacity: 0.7;
+  }
+ }
+}
