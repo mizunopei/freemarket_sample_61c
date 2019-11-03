@@ -1,0 +1,16 @@
+%section.mypage-content__second-tab-container
+  %h2.mypage-content__tab-head 
+    購入した商品
+  %ul.mypage-content__tabs
+    %li.mypage-content__tab.mypage-content__tab--active
+      %h3
+        = link_to '#' do
+          取引中
+    %li.mypage-content__tab
+      %h3
+        = link_to '#' do
+          過去の取引
+  .mypage-content__tab-content
+    %ul.mypage-content__item-list
+      %li.mypage-content__not-found-item
+        取引中の商品がありません
