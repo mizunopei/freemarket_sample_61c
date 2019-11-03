@@ -19,7 +19,6 @@
   }
  }
 }
-
 .login-wrapper{
   width: 456px;
   margin: 0 auto;
@@ -163,7 +162,6 @@
     color: #fff;
   }
 }
-
 .input-default{
   box-sizing: border-box;
   width: 100%;
@@ -182,12 +180,10 @@
     width: calc(50% - 6px);
   }
 }
-
 .half-content{
   display: flex;
   justify-content: space-between;
 }
-
 .signup-select{
   & span{
     display: inline-block;
@@ -231,11 +227,9 @@
     }
   }
 }
-
 select{
   -webkit-appearance: none;
 }
-
 .select-default{
   display: inline-block;
   width: 100%;
@@ -244,8 +238,6 @@ select{
   background: 0;
   border: 1px solid #ccc;
 }
-
-
 .btn-default{
   margin: 40px 0 0;
   display: block;
@@ -287,14 +279,12 @@ select{
     color: #333;
   }
 }
-
 .signup-icon{
   position: absolute;
   top: 25%;
   left: 16px;
   font-size: 30px;
 }
-
 .signup-footer{
   width: 456px;
   height: 220px;
@@ -327,28 +317,23 @@ select{
     font-size: 14px;
   }
 }
-
 .registration-caution{
   margin: 8px 0 0;
   color: #888;
   font-size: 15px;
 }
-
 .registration-consensus{
   font-size: 10px;
 }
-
 .complete-message{
   text-align: center;
 }
-
 .signup-banner{
   width: 100%;
   & img{
     width: 100%;
   }
 }
-
 .signup-footer{
   background-color: $bg-deafult;
 }

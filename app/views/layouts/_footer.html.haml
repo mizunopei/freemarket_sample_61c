@@ -1,0 +1,96 @@
+%aside
+  .app__banner
+    .app__banner__mine
+      .app__banner__mine__inner
+        .app__banner__mine__inner_flm
+          %h2 スマホでかんたんフリマアプリ
+        .app__banner__mine__inner_doun
+          %p 今すぐ無料ダウンロード！
+        .app__banner__mine__inner_icon
+          %ul.image__link
+            %li
+              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?465897195", width:'68', alt:"")
+            %li
+              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?465897195", width:'133', height:'40', alt:"")
+            %li
+              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?465897195", width:'133', height:'40', alt:"")
+      %figure
+        = link_to image_tag("sumaho.png", height:'300', width:'260', alt:"")
+%footer
+  .global-footer
+    %nav.clearfix
+      .footer-cell
+        %h2.footer-head メルカリについて
+        %ul
+          %li.footer__contents__links_link
+            = link_to "会社概要（運営会社）", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "採用情報", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "プレスリリース", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "公式ブログ", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "メルカリロゴ利用ガイドライン", {}, style: "color:#fff"
+          %li
+            = link_to "", class: "footer-social-link" 
+          %li
+            = link_to "", class: "footer-social-link" 
+      .footer-cell
+        %h2.footer-head ヘルプ＆ガイド
+        %ul
+          %li.footer__contents__links_link
+            = link_to "メルカリガイド", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "楽々メルカリ便", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "ゆうゆうメルカリ便", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "大型メルカリ便", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "車体取引ガイド", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "メルカリあんしん・あんぜん宣言！", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "偽ブランド品撲滅への取り組み", {}, style: "color:#fff"
+          %li.footer__contents__links_link
+            = link_to "メルカリボックス", {}, style: "color:#fff"
+      .footer-cell.full-width
+        %h2.footer-head プライバシーと利用規約
+        .inner-footer-cell
+          %ul
+            %li.footer__contents__links_link
+              = link_to "プライバシーポリシー", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "メルカリ利用規約", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "あんしんスマホサポート制度に関する利用規約", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "コンプライアンスポリシー", {}, style: "color:#fff"
+      .footer-cell.full-width
+        %h2.footer-head 
+        .inner-footer-cell
+          %ul
+            %li.footer__contents__links_link
+              = link_to "個人データの安全管理にかかる基本方針", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "特定商取引に関する表記", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "資金決済法に基づく表示", {}, style: "color:#fff"
+            %li.footer__contents__links_link
+              = link_to "法令順守と犯罪仰止のために", {}, style: "color:#fff"
+      .footer-cell.footer-nav-lang
+        %h2.footer-head 国
+        %ul
+          %li
+            %a.active{href: ""} 日本
+          %li
+            %a{href: ""} United States         
+    .footer-bottom
+      .footer-logo
+        = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?465897195", height: '33', width: '124', href:"")  
+      %span.footer-copyright
+        %small © 2019 Mercari
+=link_to "", class: "new_item_path" do
+  出品
+  = fa_icon 'camera', class: "icon_camera"

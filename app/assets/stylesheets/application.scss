@@ -1,9 +1,24 @@
+
+
 @import "font-awesome";
 @import "config/reset";
 @import "config/colors";
+
 @import "mixin/mixins";
 @import "./signups";
 @import "./sell_item.scss";
+
+@import "main_item/items";
+@import "header";
+@import "footer";
+
+@import "main_item/itembox";
+
+@import "mypage/mypage-side";
+@import "mypage/mypage-content";
+@import "mypage";
+@import "mypage/profile";
+
 
 body{
   font-family:'Source Sans Pro', Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
@@ -20,3 +35,5 @@ a{
     color: #888;
   }
 }
+
+
