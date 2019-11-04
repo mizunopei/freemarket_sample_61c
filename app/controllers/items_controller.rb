@@ -5,5 +5,8 @@ class ItemsController < ApplicationController
   def show
   end
   
+  def new
+    render :new, layout: "signup"
+  end
 end
 
