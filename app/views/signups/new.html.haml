@@ -1,0 +1,91 @@
+.signup-wrapper
+  .signup-header
+    .header-logo
+      =link_to "#" do
+        =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
+    %nav.progress-bar.signup-bar
+      %ol
+        %li 
+          %p.active 会員情報
+          .progress-status.start.active
+        %li 
+          %p 電話番号認証
+          .progress-status
+        %li 
+          %p お届け先住所入力
+          .progress-status
+        %li 
+          %p 支払い方法
+          .progress-status
+        %li 
+          %p 完了
+          .progress-status.end
+  .regisration-main
+    %main.registration-main-container
+      %h2.registration-main-container__header 会員情報登録
+      %section.registration-main-container__form
+        = form_for(@user, url: sms_confirmation_signups_path, html: {method: "get"}) do |f|
+          /= render "devise/shared/error_messages", resource: resource
+          .registration-main-container__form__content
+            .registration-main-container__form__content__group
+              %label ニックネーム
+              %span.form-require 必須
+              = f.text_field :nickname, placeholder: "例）メルカリ太郎", class: "input-default"
+            .registration-main-container__form__content__group
+              %label メールアドレス
+              %span.form-require 必須
+              = f.email_field :email, placeholder: "PC・携帯どちらでも可", autocomplete: "email",  class: "input-default"
+            .registration-main-container__form__content__group
+              %label パスワード
+              %span.form-require 必須
+              = f.password_field :password, placeholder: "7文字以上", class: "input-default"
+            .registration-main-container__form__content__group
+              %label パスワード(確認)
+              %span.form-require 必須
+              = f.password_field :password_confirmation, placeholder: "7文字以上", class: "input-default"
+            .registration-main-container__form__content__group
+              %h3 本人確認
+              %p
+                安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            .registration-main-container__form__content__group
+              %div
+                %label お名前(全角)
+                %span.form-require 必須
+              .half-content
+                = f.text_field :last_name, placeholder: "例)山田", class: "input-default half"
+                = f.text_field :first_name, placeholder: "例)彩", class: "input-default half"
+            .registration-main-container__form__content__group
+              %div
+                %label お名前カナ(全角)
+                %span.form-require 必須
+              .half-content
+                = f.text_field :last_name_kana, placeholder: "例)ヤマダ", class: "input-default half"
+                = f.text_field :first_name_kana, placeholder: "例)アヤ", class: "input-default half"
+            .registration-main-container__form__content__group
+              %div
+                %label 生年月日
+                %span.form-require 必須
+              .signup-select
+                =fa_icon 'angle-down', class:"birth_day year"
+                =fa_icon 'angle-down', class:"birth_day month"
+                =fa_icon 'angle-down', class:"birth_day day"
+                = raw sprintf(f.date_select(:birth_day, prompt: "--", use_month_numbers: true,start_year: Time.now.year, end_year: (Time.now.year - 100), date_separator: '%s'), "年", "月") + "日"
+            %p.registration-caution
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+            .registration-main-container__form__content__group
+              %p.registration-consensus
+              「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします 
+              =f.submit "次へ進む", class: "btn-default"
+            -# = render "devise/shared/links"
+    .signup-footer
+      %nav
+        %ul
+          %li
+            =link_to "プライバシーポリシー", "#"
+          %li
+            =link_to "メルカリ利用規約", "#"
+          %li
+            =link_to  "特定商取引に関する表記", "#"
+      =link_to "#",class: "signup-footer__logo" do
+        =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", width: "100", height: "auto"
+      %p &copy;2019 Mercari
