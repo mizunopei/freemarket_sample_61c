@@ -101,6 +101,60 @@ main {
         white-space: pre-wrap;
     }
 }
+.product-button-container.clearfix {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: center;
+    .product-button-left {
+    display: inline-block;
+    flex-direction:row;
+    margin: 8px 0 0;
+    justify-content: space-between;
+        .product-button {
+        border: 1px solid #f5f5f5;
+        background: #f5f5f5;
+        border-radius: 40px;
+        font-size: 14px;
+        padding: 4px 16px;
+        .fa_icon-heart {
+            color: #fff;
+            border: 1px solid;
+            border-color: #aaa;
+        }
+        .fade-in-down {
+            background-color: transparent;
+            color: #333;
+            font-size: 14px;
+            margin-left: 6px;
+        }
+    }
+  }
+}
+.product-button__report {
+    border: 1px solid #f5f5f5;
+    background: #f5f5f5;
+    border-radius: 40px;
+    padding: 4px 8px;
+    margin: 8px 0 0;
+    height: 20px;
+    .fa-flag {
+      background-color: transparent;
+      color: #333;
+      font-size: 14px;
+      margin-right: 7px;
+    }
+}
+.product-button-right {
+    margin: 8px 0 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-right: 7px;
+    float: right;
+    .safe-description {
+      color: #0099e8;
+    }
+}
 .item__message {
     margin: 8px 354px 0;
     &__content {

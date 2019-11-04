@@ -9,4 +9,3 @@ class ItemsController < ApplicationController
     render :new, layout: "signup"
   end
 end
-

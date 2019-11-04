@@ -23,12 +23,15 @@
                 %div
                   .item__detail__table__user
                     %i.icon-good
+                      = fa_icon "smile-o"
                     %span 30
                   .item__detail__table__user
                     %i.icon-normal
+                      = fa_icon "meh-o"
                     %span 0
                   .item__detail__table__user
                     %i.icon-bad
+                      = fa_icon "frown-o"
                     %span 0
             %tr
               %th カテゴリー
@@ -36,11 +39,10 @@
                 = link_to "#" do
                   本・音楽・ゲーム
                 = link_to "#", class:"item-detail-table-sub-category" do
-                  %i.icon-arrow-right 
-                  %div テレビゲーム                        
+                  %div > テレビゲーム                        
                 = link_to "#", class: ".item-detail-table-sub-sub-category" do
-                  %i.icon-arrow-right
-                    携帯用ゲーム本体
+                  >
+                  携帯用ゲーム本体
             %tr
               %th ブランド
               %td
@@ -67,7 +69,7 @@
         .item-btn-float-area
           =link_to "#", class:'item-buy-btn' do
             購入画面に進む
-      .item-description.f14
+      .item-description
         %p.item-description-inner
           30年程前に任天堂から販売された、初代ゲームボーイをカスタムしたものです。特に動作不良もなく、内部基盤の状態もいいものです。カスタムも綺麗に仕上がっております。手に入れた段階で、かなり状態がよく、外装にも殆ど傷がございませんでした。しかし、30年前のものですので、長期的な動作の保証はいたし兼ねますので、ご理解の上ご購入ください。
           出品はゲームボーイ本体のみです。写真で起動しているゲームは動作確認のためのものなので、付属しません。個体判別防止のため、写真の背面ナンバーはボカしています。
@@ -93,6 +95,21 @@
           
           ●ガラススクリーン
           新品のガラススクリーンに交換しています。純正のスクリーンよりも、傷がつきにくくクリアで、視認性がいいです。
+      .product-button-container.clearfix
+        .product-button-left
+          .product-button-like
+            %button{type: "button", name: "like!", class: "product-button"}
+              = fa_icon "heart"
+              %span.fade-in-down いいね!
+              %span.fade-in-down 0
+        .product-button__report
+          = link_to "", class: "product-button__report" do
+            = fa_icon "flag"
+            %span.fade-in-down 不適切な商品の報告            
+        .product-button-right
+          = link_to 'https://www.mercari.com/jp/safe/description/', target: "_blank", class: "safe-description" do
+            = fa_icon "lock"
+            あんしん・あんぜんへの取り組み
 .item__message
   .item__message__container
   .item__message__content
@@ -203,9 +220,11 @@
           %li.footer__contents__links_link
             = link_to "メルカリロゴ利用ガイドライン", {}, style: "color:#fff"
           %li
-            = link_to "", class: "footer-social-link" 
+            = link_to "", class: "footer-social-link" do
+              = fa_icon 'twitter', class: "icon_twitter"
           %li
-            = link_to "", class: "footer-social-link" 
+            = link_to "", class: "footer-social-link" do
+              = fa_icon 'facebook', class: "icon_facebook"
       .footer-cell
         %h2.footer-head ヘルプ＆ガイド
         %ul
