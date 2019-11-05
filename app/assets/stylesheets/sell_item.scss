@@ -155,33 +155,34 @@
         color: $sell-light-blue;
       }
     }
-  }.sell-button{
-    display: block;
-    cursor: pointer;
-    text-align: center;
-    line-height: 48px;
-    font-size: 14px;
-    color: $sell-white;
-    transition: all  0.3s ease;
-  }
-  .red-button{
-    background-color: $sell-btn-red;
-    border: 1px solid $sell-btn-red;
-    width: 100%;
-    margin-top: 40px;
-  }
-  .red-button:hover{
-    background-color: #dc362d;
-  }
-  .gray-button{
-    text-decoration: none;
-    width: 45%;
-    margin: 24px auto 0;
-    background-color: $sell-btn-gray;
-    border: 1px solid $sell-btn-gray;
-  }
-  .gray-button:hover{
-    opacity: 0.7;
+    .sell-button{
+      display: block;
+      cursor: pointer;
+      text-align: center;
+      line-height: 48px;
+      font-size: 14px;
+      color: $sell-white;
+      transition: all  0.3s ease;
+    }
+    .red-button{
+      background-color: $sell-btn-red;
+      border: 1px solid $sell-btn-red;
+      width: 100%;
+      margin-top: 40px;
+    }
+    .red-button:hover{
+      background-color: #dc362d;
+    }
+    .gray-button{
+      text-decoration: none;
+      width: 45%;
+      margin: 24px auto 0;
+      background-color: $sell-btn-gray;
+      border: 1px solid $sell-btn-gray;
+    }
+    .gray-button:hover{
+      opacity: 0.7;
+    }
   }
  }
 }
