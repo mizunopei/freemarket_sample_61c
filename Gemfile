@@ -74,5 +74,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'active_hash'
+gem 'payjp'
+gem "jquery-rails"
 gem 'carrierwave'
 gem 'fog-aws'

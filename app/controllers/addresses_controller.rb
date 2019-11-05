@@ -12,14 +12,14 @@ class AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     if @address.save
-      redirect_to card_signups_path
+      redirect_to new_card_path
     end 
   end
 
   def update
     @address = Address.find(current_user.id)
     @address.update(address_params)
-    redirect_to card_signups_path
+    redirect_to new_card_path
   end
 
   private
