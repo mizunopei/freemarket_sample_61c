@@ -1,7 +1,7 @@
 .signup-wrapper
   .signup-header
     .header-logo
-      =link_to "#" do
+      =link_to root_path do
         =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
     %nav.progress-bar.signup-bar
       %ol
@@ -86,6 +86,6 @@
             =link_to "メルカリ利用規約", "#"
           %li
             =link_to  "特定商取引に関する表記", "#"
-      =link_to "#",class: "signup-footer__logo" do
+      =link_to root_path, class: "signup-footer__logo" do
         =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", width: "100", height: "auto"
       %p &copy;2019 Mercari
