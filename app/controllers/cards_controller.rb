@@ -1,7 +1,8 @@
 class CardsController < ApplicationController
   require "payjp"
   # before_action :set_card
-
+  layout 'registration'
+  
   def new
     @card = Card.new
   end
