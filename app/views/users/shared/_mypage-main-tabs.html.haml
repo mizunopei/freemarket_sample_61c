@@ -1,0 +1,36 @@
+%section.mypage-content__main-tab-container
+  %ul.mypage-content__tabs
+    %li.mypage-content__tab.mypage-content__tab--active
+      %h3
+        = link_to '#' do
+          お知らせ
+    %li.mypage-content__tab
+      %h3
+        = link_to '#' do
+          やることリスト
+        
+  .mypage-content__notification
+    %ul.mypage-content__notification-list
+      %li
+        = link_to '#', class: 'mypage-content__item-link' do
+          %figure
+            = image_tag 'mercari_profile.png', size: '48x48'
+          .mypage-content__item-body
+            .mypage-content__item-text
+              事務局から個別メッセージ「ログイン通知」
+            %time
+              %span
+                2 時間前
+      %li
+        = link_to '#', class: 'mypage-content__item-link' do
+          %figure
+            = image_tag 'mercari_profile.png', size: '48x48'
+          .mypage-content__item-body
+            .mypage-content__item-text
+              事務局から個別メッセージ「ログイン通知」
+            %time
+              %span
+                3 時間前
+        %li.mypage-content__go-list
+          = link_to '#' do
+            一覧を見る

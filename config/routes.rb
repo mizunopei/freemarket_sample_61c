@@ -13,7 +13,13 @@ Rails.application.routes.draw do
 
   resources :addresses, only: [:new, :create, :update]  
   resources :cards, only: [:new, :create]  
-
+  
+　resources :users do
+    collection do
+      get 'logout'
+      get 'profile'
+    end
+  end
 
 root "items#index"
 resources :items
