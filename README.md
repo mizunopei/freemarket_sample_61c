@@ -5,32 +5,43 @@
 |nickname|string|null: false,unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-### Association
-- has_one :profile
-- has_many :items
-- has_many :likes
-
-
-## profilesテーブル
-|Column|Type|Options|
-|------|----|-------|
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
+|birth_day|date|null: false|
+|tel|integer|null: false|
+### Association
+- has_one :address
+- has_many :cards
+- has_one :profile
+- has_many :items
+- has_many :likes
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|d_last_name|string|null: false|
+|d_first_name|string|null: false|
+|d_last_name_kana|string|null: false|
+|d_first_name_kana|string|null: false|
 |postal_code|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |address|string|null: false|
-|building_name|string|null: false|
-|building_tel|integer|null: false|
+|building_name|string||
+|building_tel|integer||
+|user_id|references|foreign_key: true|
+### Association
+- belongs_to :user
+
+## profilesテーブル
 |introduction|text|---|
 |avator|---|---|
 |sales|integer|---|
 |user_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
-
 
 ## bank_accountsテーブル
 |Column|Type|Options|
