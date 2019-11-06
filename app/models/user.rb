@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :last_name_kana, presence: true, format: { with: VALID_KATAKANA_REGEX }
   validates :first_name_kana, presence: true, format: { with: VALID_KATAKANA_REGEX }
   validates :birth_day, presence: true
-  validates :tel, presence: true, uniqueness: true, length: { is: 7 }, numericality: { only_integer: true}
+  validates :tel, presence: true, uniqueness: true, length: { in: 10..11 }, numericality: { only_integer: true}
    
   has_one :address
   has_many :cards
