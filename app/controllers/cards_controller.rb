@@ -15,7 +15,6 @@ class CardsController < ApplicationController
     else
       customer = Payjp::Customer.create(
         description: 'test',
-        # email: current_user.email,
         card: params['payjp-token'],
         metadata: {user_id: current_user.id}
       )
@@ -27,11 +26,5 @@ class CardsController < ApplicationController
       end
     end
   end
-
-  # private
-
-  # def set_card
-  #   @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
-  # end
 
 end
