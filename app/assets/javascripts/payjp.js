@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function(){
   var form = $("#card_form")
 
   $(document).on("click", "#card_submit", function(e){
-    e.prevent
+    e.preventDefault
     form.find("input[type=submit]").prop("disabled", true);
 
     var card = {    
@@ -16,7 +16,8 @@ $(document).on('turbolinks:load', function(){
 
     Payjp.createToken(card, function(s, response) {
       if (response.error) {
-        alert(response.error.message);
+        alert("入力した情報に誤りがあります。");
+        form.find("input[type=submit]").prop("disabled", false);
       }
       else {
         $(".number").removeAttr("name");
@@ -26,8 +27,6 @@ $(document).on('turbolinks:load', function(){
         var token = response.id;
 
         form.append($('<input type="hidden" name="payjp-token" />').val(token));
-        a = form.get(0)
-        console.log(a);
         $("#card_form").submit();
       }
     });

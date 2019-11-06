@@ -1,7 +1,7 @@
 .signup-wrapper
   .signup-header
     .header-logo
-      =link_to "#" do
+      =link_to root_path do
         =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
     %nav.progress-bar.signup-bar
       %ol
@@ -24,6 +24,12 @@
     %main.registration-main-container
       .registration-main-container__header 支払い方法
       %section.registration-main-container__form
+        - if @card.errors.any?
+          - unless @card.valid?
+            - if errors = @card.errors.full_messages
+              %ul.signup-error-message
+                - errors.each do |error|
+                  %li=error
         = form_with url: cards_path, method: :post, html: { id: "card_form" } do |f|
           .registration-main-container__form__content
             .registration-main-container__form__content_group

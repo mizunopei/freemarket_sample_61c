@@ -1,25 +1,26 @@
 class AddressesController < ApplicationController
-
+  layout 'registration'
+  
   def new
-    if current_user.address
-      @address = Address.find(current_user.id)
-    else 
-      @address = Address.new
-    end
-
+    @address = Address.new
   end
 
   def create
     @address = Address.new(address_params)
     if @address.save
       redirect_to new_card_path
+    else
+      render :new
     end 
   end
 
   def update
-    @address = Address.find(current_user.id)
-    @address.update(address_params)
-    redirect_to new_card_path
+    @address = Address.find(current_user.address.id)
+    if @address.update(address_params)
+      redirect_to new_card_path
+    else
+      render :new
+    end 
   end
 
   private
