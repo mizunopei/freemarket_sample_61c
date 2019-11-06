@@ -36,7 +36,7 @@
   &__mail-login-container{
     padding: 24px 64px 50px;
     text-align: center;
-    color: #ea352d;
+    color: $signup-red;
   }
 }
 
@@ -59,7 +59,7 @@
       margin-bottom: 5px;
       font-weight: 500;
       &.active{
-      color: #ea352d;
+      color: $signup-red;
       font-weight: 600;
       }
     }
@@ -71,7 +71,7 @@
       background: #ccc;
       border-radius: 50%;
       &.active{
-        background: #ea352d;
+        background: $signup-red;
       }
       &:before{
         position: absolute;
@@ -90,7 +90,7 @@
       }
       &.though:before
       {
-        background: #ea352d;
+        background: $signup-red;
       }
       &:after{
         position: absolute;
@@ -156,7 +156,7 @@
   margin: 0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
-  background: #ea352d;
+  background: $signup-red;
   color: #fff;
   font-size: 14px;
   &.any{
@@ -287,8 +287,8 @@ select{
   text-align: center;
   line-height: 48px;
   font-size: 14px;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background: $signup-red;
+  border: 1px solid $signup-red;
   color: #fff;
   cursor: pointer;
   position: relative;
@@ -395,6 +395,6 @@ select{
 }
 
 .signup-error-message{
-  color: #ea352d;
+  color: $signup-red;
   margin-bottom: 30px;
 }
