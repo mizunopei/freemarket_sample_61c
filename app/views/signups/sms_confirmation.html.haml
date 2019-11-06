@@ -1,7 +1,7 @@
 .signup-wrapper
   .signup-header
     .header-logo
-      =link_to "#" do
+      =link_to root_path do
         =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
     %nav.progress-bar.signup-bar
       %ol
@@ -24,13 +24,13 @@
     %main.registration-main-container
       .registration-main-container__header 電話番号の確認
       %section.registration-main-container__form
-        .registration-main-container__form__content
-          .registration-main-container__form__content_group
-            %label 携帯電話の番号
-            %input.input-default{type: "tel", value: "", placeholder: "携帯電話の番号を入力"}
-            %p.registration-consensus
-            本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-            %button.btn-default
-              SMSを送信する
-            %p.registration-consensus
-            ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        = form_for @user, url: signups_path, method: :post do |f|
+          .registration-main-container__form__content
+            .registration-main-container__form__content_group
+              %label 携帯電話の番号
+              = f.text_field :tel, placeholder: "携帯電話の番号を入力", maxlength: "11", classs: "input-default"
+              %p.registration-consensus
+              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+              = f.submit "SMSを送信する", class: "btn-default"
+              %p.registration-consensus
+              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。

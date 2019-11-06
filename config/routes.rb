@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :signups do
+  resources :signups, only: [:index, :new, :create] do
     collection do
       get 'login'
-      get 'registration'
       get 'sms_confirmation'
-      get 'address'
-      get 'card'
       get 'complete'
     end
-  end  
+  end
+
+  resources :addresses, only: [:new, :create, :update]  
+  resources :cards, only: [:new, :create]  
   
   resources :users do
     collection do
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
       get 'profile'
     end
   end
+
 root "items#index"
 resources :items
 
