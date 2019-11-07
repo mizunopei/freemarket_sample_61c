@@ -4,22 +4,29 @@
     %section.item__box-container
       %h1.item__name 【美品】初代 ゲームボーイ カスタム GAME BOY【1102】
       %p.item__wording
-        『【美品】初代 ゲームボーイ カスタム GAME BOY【1102】』は、30回の取引実績を持つ
-        = link_to "安楽" 
-        さんから出品されました。
-        =link_to "携帯用ゲーム本体/本・音楽・ゲーム"
-        の商品で、未定から1~2日で発送されます。
+        item.name
       .item__main-content.clearfix
         .item__main__content
-          .owl-carousel
-            .owl-item-inner
-              = link_to image_tag("m70040871468_1.jpg", height:'375', width:'300') 
+          .owl-carousel.owl-loaded.owl-drag
+            .owl-stage-outer
+              .owl-item
+                .owl-item-inner.is-higher-height
+                  = link_to image_tag("m70040871468_1.jpg", class: "owl-stage-outer") 
+            -# - @.each do ||
+            .item__samjej
+              .owl-dots
+                .owl-dot
+                  %span
+                  .owl-dot-inner
+                    = link_to image_tag("m70040871468_1.jpg", class: "is-higher-height")
+                    -# = image_tag "#{.name}", class: "is-higher-height"
         %table.item__detail__table
           %tbody
             %tr
               %th 出品者
               %td
-                = link_to "安楽" 
+                =link_to "" do
+                  name
                 %div
                   .item__detail__table__user
                     %i.icon-good
