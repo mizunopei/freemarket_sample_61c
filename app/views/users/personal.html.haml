@@ -1,0 +1,64 @@
+=render 'layouts/header'
+.main-container
+  =render 'users/shared/mypage-side-bar'
+  .personal-content
+    .personal-content-mypage
+      .personal-content-mypage__head
+        本人情報の登録
+      = form_with model: @user, local: true, class: 'personal-content__form' do |f|
+        %div
+          %p.personal-content-mypage__text
+            お客様の本人情報をご登録下さい。
+            %br
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.personal-content-mypage__text-right
+            =link_to '本人確認書類のアップロードについて'
+        %div
+          .personal-content-mypage__group
+            = f.label 'お名前'
+          %p
+            = current_user.last_name
+            = current_user.first_name
+        %div
+          .personal-content-mypage__group
+            = f.label 'お名前カナ'
+          %p
+            = current_user.last_name_kana
+            = current_user.first_name_kana
+        %div
+          .personal-content-mypage__group
+            = f.label '生年月日'
+          %p
+            = current_user.birth_day
+        %div
+          .personal-content-mypage__group
+            %label 郵便番号
+            %span.form-require.any 任意
+            = f.text_field :postal_code, placeholder: "例）1234567", maxlength: "7", class: "input-default"
+        %div
+          .personal-content-mypage__group
+            %label 都道府県
+            %span.form-require.any 任意
+            = f.collection_select :area, Prefecture.all, :id, :name, {prompt: "---"},class: "personal-content-mypage__Prefectures"
+        %div
+          .personal-content-mypage__group
+            %label 市町村
+            %span.form-require.any 任意
+            = f.text_field :city, placeholder: "例）横浜市緑区", class: "input-default"
+        %div
+          .personal-content-mypage__group
+            %label 番地
+            %span.form-require.any 任意
+            = f.text_field :address, placeholder: "例）青山1-1-1", class: "input-default"
+        %div
+          .personal-content-mypage__group
+            %label 建物名
+            %span.form-require.any 任意
+            = f.text_field :building_name, placeholder: "例）柳ビル103", class: "input-default"
+        .btn-default-btn-red
+          = f.submit '登録する', class: 'btn-default btn-red'
+        %p.personal-content-mypage__text-last
+          =link_to '本人情報の登録について'
+      
+
+=render 'layouts/footer'
