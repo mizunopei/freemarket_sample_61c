@@ -15,6 +15,7 @@
 - has_one :address
 - has_many :cards
 - has_one :profile
+- has_many :sns_credentials
 - has_many :items
 - has_many :likes
 
@@ -36,9 +37,20 @@
 - belongs_to :user
 
 ## profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |introduction|text|---|
 |avator|---|---|
 |sales|integer|---|
+|user_id|references|foreign_key: true|
+### Association
+- belongs_to :user
+
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|provider|string|---|
+|uid|string|---|
 |user_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
