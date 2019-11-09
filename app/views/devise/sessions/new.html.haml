@@ -9,10 +9,10 @@
       =link_to signups_path, class:"btn-default new-account" do
         新規会員登録
     .login-wrapper__sns-login-container
-      %button.btn-default.login.facebook
+      = link_to "/users/auth/facebook", method: :post, class:"btn-default login facebook" do
         = fa_icon 'facebook-official', class: "signup-icon"
         Facebookでログイン
-      %button.btn-default.login.google
+      = link_to "/users/auth/google_oauth2", method: :post, class: "btn-default login google" do
         = fa_icon 'google', class: "signup-icon"
         Googleでログイン
     .login-wrapper__mail-login-container
