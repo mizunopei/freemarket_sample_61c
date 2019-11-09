@@ -10,19 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_04_025538) do
+ActiveRecord::Schema.define(version: 2019_11_05_095404) do
 
-<<<<<<< Updated upstream
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "introduction", null: false
-    t.string "condition"
-    t.string "d_burden"
-    t.string "d_way"
-    t.bigint "prefecture_id"
-    t.integer "d_date"
-    t.integer "price"
-=======
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -44,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_11_04_025538) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "d_last_name", null: false
     t.string "d_first_name", null: false
@@ -56,14 +46,12 @@ ActiveRecord::Schema.define(version: 2019_11_04_025538) do
     t.string "building_name"
     t.bigint "building_tel"
     t.bigint "user_id"
->>>>>>> Stashed changes
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["prefecture_id"], name: "index_items_on_prefecture_id"
   end
 
-<<<<<<< Updated upstream
-=======
+
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "customer_id", null: false
@@ -119,5 +107,5 @@ ActiveRecord::Schema.define(version: 2019_11_04_025538) do
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "sns_credentials", "users"
->>>>>>> Stashed changes
+
 end
