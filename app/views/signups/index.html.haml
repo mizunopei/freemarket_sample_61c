@@ -6,10 +6,10 @@
         =link_to new_signup_path, class: "btn-default signup mail" do
           = fa_icon 'envelope-o', class: "signup-icon"
           メールアドレスで登録する
-        %button.btn-default.signup.facebook
+        = link_to "/users/auth/facebook", method: :post, class: "btn-default signup facebook" do
           = fa_icon 'facebook-official', class: "signup-icon"
           Facebookで登録する
-        %button.btn-default.signup.google
+        = link_to "/users/auth/google_oauth2", method: :post, class: "btn-default signup google" do
           = fa_icon 'google', class: "signup-icon"
           Googleで登録する
 .signup-footer.signup
