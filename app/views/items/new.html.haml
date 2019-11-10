@@ -136,9 +136,11 @@
                 =link_to "加盟店規約", "#",{class: "caution-link"}
                 に同意したことになります。
 
+
             = f.submit "出品する", class: "sell-button red-button"
-            %a.sell-button.gray-button
+            = link_to root_path, class: "sell-button gray-button" do
               もどる
+
 
 .signup-footer
   %nav
@@ -149,6 +151,6 @@
         =link_to "メルカリ利用規約", "#"
       %li
         =link_to  "特定商取引に関する表記", "#"
-  =link_to "#",class: "signup-footer__logo" do
+  =link_to root_path ,class: "signup-footer__logo" do
     =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", width: "100", height: "auto"
   %p &copy;2019 Mercari
