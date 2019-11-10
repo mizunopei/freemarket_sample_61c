@@ -12,13 +12,17 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create(item_params)
-    redirecty_to action: "index"
+    @item= Item.new(item_params)
+    if @item.save
+      redirect_to action: "index"
+    else
+      render :new
+    end
   end
 
   private
   def item_params
-    params.repuire(:item).permit(:name, :introduction, :condition, :d_burden, :d_way, :d_date, :prefecture_id, :price, images: [])
+    params.require(:item).permit(:name, :introduction, :condition, :d_burden, :d_way, :d_date,:prefecture_id, :price,images: [])
   end
 end
 
