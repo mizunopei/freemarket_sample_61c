@@ -35,6 +35,7 @@
   &__mail-login-container{
     padding: 24px 64px 50px;
     text-align: center;
+    color: $signup-red;
   }
 }
 
@@ -57,7 +58,7 @@
       margin-bottom: 5px;
       font-weight: 500;
       &.active{
-      color: #ea352d;
+      color: $signup-red;
       font-weight: 600;
       }
     }
@@ -69,7 +70,7 @@
       background: #ccc;
       border-radius: 50%;
       &.active{
-        background: #ea352d;
+        background: $signup-red;
       }
       &:before{
         position: absolute;
@@ -88,7 +89,7 @@
       }
       &.though:before
       {
-        background: #ea352d;
+        background: $signup-red;
       }
       &:after{
         position: absolute;
@@ -154,7 +155,7 @@
   margin: 0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
-  background: #ea352d;
+  background: $signup-red;
   color: #fff;
   font-size: 14px;
   &.any{
@@ -162,7 +163,8 @@
     color: #fff;
   }
 }
-.input-default{
+
+.input-default, #address_prefecture_id, #address_area, #user_tel{
   box-sizing: border-box;
   width: 100%;
   height: 48px;
@@ -180,11 +182,44 @@
     width: calc(50% - 6px);
   }
 }
+
+#user_birth_day_1i, #user_birth_day_2i ,#user_birth_day_3i{
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  padding: 10px 16px 8px;
+  margin: 8px 5px 0;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  font-size: 16px;
+  width: calc(25% - 6px);
+}
+
 .half-content{
   display: flex;
   justify-content: space-between;
 }
 .signup-select{
+  position: relative;
+  z-index: 1;
+  & .birth_day{
+    position: absolute;
+    font-size: 30px;
+    color: #888;
+    top: 30%;
+    z-index: 0;
+    &.year{
+      left: 17%;
+    }
+    &.month{
+      left: 49%;
+    }
+    &.day{
+      left: 82%;
+    }
+  }
   & span{
     display: inline-block;
     margin: 0 5px;
@@ -242,10 +277,11 @@ select{
   margin: 40px 0 0;
   display: block;
   width: 100%;
+  text-align: center;
   line-height: 48px;
   font-size: 14px;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background: $signup-red;
+  border: 1px solid $signup-red;
   color: #fff;
   cursor: pointer;
   position: relative;
@@ -265,6 +301,7 @@ select{
     margin: 20px 0 0;
     border-radius: 5px;
     font-size: 16px;
+    text-align: center;
     &:first-child{
       margin: 40px 0 0;
     }
@@ -304,7 +341,12 @@ select{
   }
   & a{
     font-size: 14px;
-  }
+    color: #333;
+    &:hover{
+      text-decoration: underline;
+      color: #888;
+      }
+    }
   &__logo{
     margin: 40px auto 0;
     & img{
@@ -336,4 +378,9 @@ select{
 }
 .signup-footer{
   background-color: $bg-deafult;
+}
+
+.signup-error-message{
+  color: $signup-red;
+  margin-bottom: 30px;
 }

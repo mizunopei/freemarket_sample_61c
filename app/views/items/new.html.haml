@@ -4,21 +4,19 @@
       %h2.sell__head 商品の情報を入力
       .sell-form
         = form_with(model: @item, local: true) do |f|
+          = render "layouts/error-messages", model: @item
           .sell-upload__box
             %h3.sell-upload__head
               出品画像
               %span.form-require 必須
             %p 最大5枚までアップロード出来ます
-            %label.sell-upload__image-box
-              .sell-dropbox-container
+            .sell-upload__image-box
+              #preview
+              %label.input-zone
                 = f.file_field :images, class: "sell-upload__file" , multiple: true
-                .image-dropbox
-                  #preview
-                %pre.visible-pc
+                .visible-pc
                   :preserve
-                    ドラックアンドドロップ
-                    またはクリックしてファイルをアップロード
-   
+                    クリックしてファイルをアップロード
           .sell-content
             .form-group
               %label 商品名
@@ -71,46 +69,27 @@
               配送について
               %a.question ?
             .sell-form__box
-              .form-group
+              .form-group#select_burden
                 %label 配送料の負担
                 %span.form-require 必須
                 %div
                   .select-box
-                    -# %i
-                    -# = f.select :d_burden,[["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]],{prompt: "---"},class: "select-bar"
-                    -# %option ---
-                    -# %option{value: ""} 送料込み(出品者負担)
-                    -# %option{value: ""} 着払い(購入者負担)
-              
-              .form-group
-                %label 配送料の方法
-                %span.form-require 必須
-                %div
-                  .select-box
-                    .i
-                  %select.select-bar
-                    %option ---
-                    %option{value: ""} 未定
-                    %option{value: ""} クロネコヤマト
-                    %option{value: ""} ゆうパック
-                    %option{value: ""} ゆうメール
-              
+                    %i
+                    = f.select :d_burden,[["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]],{prompt: "---"},class: "d_burden select-bar"             
               .form-group
                 %label 発送元の地域
                 %span.form-require 必須
                 %div
                   .select-box
-                    -# .i
-                    -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"},class: "select-bar"
-          
+                    .i
+                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"},class: "select-bar"         
               .form-group
                 %label 発送までの日数
                 %span.form-require 必須
                 %div
                   .select-box
                     .i
-                    = f.select :d_date,[["1~2日で発送", "1~2日で発送"], ["2~3日で発送","2~3日で発送"],["4~7日で発送", "4~7日で発送"]],{prompt: "---"},class: "select-bar"
-            
+                    = f.select :d_date,[["1~2日で発送", "1~2日で発送"], ["2~3日で発送","2~3日で発送"],["4~7日で発送", "4~7日で発送"]],{prompt: "---"},class: "select-bar"       
           .sell-content.clearfix
             %h3.sell-sub__head
               販売価格(300~9,999,999)
@@ -152,11 +131,9 @@
                 また、出品をもちまして
                 =link_to "加盟店規約", "#",{class: "caution-link"}
                 に同意したことになります。
-
             = f.submit "出品する", class: "sell-button red-button"
-            %a.sell-button.gray-button
+            = link_to root_path, class: "sell-button gray-button" do
               もどる
-
 .signup-footer
   %nav
     %ul
@@ -166,6 +143,6 @@
         =link_to "メルカリ利用規約", "#"
       %li
         =link_to  "特定商取引に関する表記", "#"
-  =link_to "#",class: "signup-footer__logo" do
+  =link_to root_path ,class: "signup-footer__logo" do
     =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", width: "100", height: "auto"
   %p &copy;2019 Mercari
