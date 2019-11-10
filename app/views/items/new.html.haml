@@ -2,218 +2,145 @@
   .sell-container
     .sell-container__inner
       %h2.sell__head 商品の情報を入力
-      %form.sell-form
-
-        .sell-upload__box
-          %h3.sell-upload__head
-            出品画像
-            %span.form-require 必須
-          %p 最大10枚までアップロード出来ます
-          %label.sell-upload__image-box
-            .sell-dropbox-container
-              %input.sell-upload__file{type: "file", multiplename: "image"}
-              %pre.visible-pc
-                :preserve
-                  ドラックアンドドロップ
-                  またはクリックしてファイルをアップロード
-        
-        .sell-content
-          .form-group
-            %label 商品名
-            %span.form-require 必須
-            %div
-              %input.input-box{placeholder: "商品名(必須40文字まで)"}
-          .form-group
-            %label 商品の説明
-            %span.form-require 必須
-            %div
-              %textarea.text-box{row:5, placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など) 例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"}
-        
-        .sell-content.clearfix
-          %h3.sell-sub__head
-            商品の詳細
-            %a.question ?
-          .sell-form__box
+      .sell-form
+        = form_with(model: @item, local: true) do |f|
+          = render "layouts/error-messages", model: @item
+          .sell-upload__box
+            %h3.sell-upload__head
+              出品画像
+              %span.form-require 必須
+            %p 最大5枚までアップロード出来ます
+            .sell-upload__image-box
+              #preview
+              %label.input-zone
+                = f.file_field :images, class: "sell-upload__file" , multiple: true
+                .visible-pc
+                  :preserve
+                    クリックしてファイルをアップロード
+    
+          .sell-content
             .form-group
-              %label カテゴリー
+              %label 商品名
               %span.form-require 必須
               %div
-                .select-box
-                  .i
-                  %select.select-bar
-                    %option ---
-                    %option{value: ""} レディース
-                    %option{value: ""} メンズ
-                    %option{value: ""} ベビー・キッズ
-                    %option{value: ""} インテリア・住まい・小物
-                    %option{value: ""} 本・音楽・ゲーム
-                    %option{value: ""} おもちゃ・ホビー・グッズ
-                    %option{value: ""} コスメ・香水・美容
-                    %option{value: ""} 家電・スマホ・カメラ
-                    %option{value: ""} スポーツ・レジャー
-                    %option{value: ""} ハンドメイド
-                    %option{value: ""} チケット
-                    %option{value: ""} 自動車・オートバイ
-                    %option{value: ""} その他
+              = f.text_field :name, class: "input-box", placeholder: "商品名(必須40文字まで)"
+            .form-group
+              %label 商品の説明
+              %span.form-require 必須
+              %div
+              = f.text_area :introduction, class: "text-box", row:5, placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など) 例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
           
-            .form-group
-              %label 商品の状態
-              %span.form-require 必須
-              %div
-                .select-box
-                  .i
-                  %select.select-bar
-                    %option ---
-                    %option{value: ""} 新品、未使用
-                    %option{value: ""} 未使用に近い
-                    %option{value: ""} 目立った傷や汚れあり
-                    %option{value: ""} やや傷や汚れあり
-                    %option{value: ""} 傷や汚れあり
-                    %option{value: ""} 全体的に状態が悪い
-        
-        .sell-content.clearfix
-          %h3.sell-sub__head
-            配送について
-            %a.question ?
-          .sell-form__box
-            .form-group
-              %label 配送料の負担
-              %span.form-require 必須
-              %div
-                .select-box
-                  .i
-                %select.select-bar
-                  %option ---
-                  %option{value: ""} 送料込み(出品者負担)
-                  %option{value: ""} 着払い(購入者負担)
+          .sell-content.clearfix
+            %h3.sell-sub__head
+              商品の詳細
+              %a.question ?
+            .sell-form__box
+              .form-group
+                %label カテゴリー
+                %span.form-require 必須
+                %div
+                  .select-box
+                    .i
+                    %select.select-bar
+                      %option ---
+                      %option{value: ""} レディース
+                      %option{value: ""} メンズ
+                      %option{value: ""} ベビー・キッズ
+                      %option{value: ""} インテリア・住まい・小物
+                      %option{value: ""} 本・音楽・ゲーム
+                      %option{value: ""} おもちゃ・ホビー・グッズ
+                      %option{value: ""} コスメ・香水・美容
+                      %option{value: ""} 家電・スマホ・カメラ
+                      %option{value: ""} スポーツ・レジャー
+                      %option{value: ""} ハンドメイド
+                      %option{value: ""} チケット
+                      %option{value: ""} 自動車・オートバイ
+                      %option{value: ""} その他
             
-            .form-group
-              %label 配送料の方法
-              %span.form-require 必須
-              %div
-                .select-box
-                  .i
-                %select.select-bar
-                  %option ---
-                  %option{value: ""} 未定
-                  %option{value: ""} クロネコヤマト
-                  %option{value: ""} ゆうパック
-                  %option{value: ""} ゆうメール
-            
-            .form-group
-              %label 発送元の地域
-              %span.form-require 必須
-              %div
-                .select-box
-                  .i
-                %select.select-bar
-                  %option ---
-                  %option{value: "北海道"} 北海道
-                  %option{value: "青森県"} 青森県
-                  %option{value: "岩手県"} 岩手県
-                  %option{value: "宮城県"} 宮城県
-                  %option{value: "秋田県"} 秋田県
-                  %option{value: "山形県"} 山形県
-                  %option{value: "福島県"} 福島県
-                  %option{value: "茨城県"} 茨城県
-                  %option{value: "栃木県"} 栃木県
-                  %option{value: "群馬県"} 群馬県
-                  %option{value: "埼玉県"} 埼玉県
-                  %option{value: "千葉県"} 千葉県
-                  %option{value: "東京都"} 東京都
-                  %option{value: "神奈川県"} 神奈川県
-                  %option{value: "新潟県"} 新潟県
-                  %option{value: "富山県"} 富山県
-                  %option{value: "石川県"} 石川県
-                  %option{value: "福井県"} 福井県
-                  %option{value: "山梨県"} 山梨県
-                  %option{value: "長野県"} 長野県
-                  %option{value: "岐阜県"} 岐阜県
-                  %option{value: "静岡県"} 静岡県
-                  %option{value: "愛知県"} 愛知県
-                  %option{value: "三重県"} 三重県
-                  %option{value: "滋賀県"} 滋賀県
-                  %option{value: "京都府"} 京都府
-                  %option{value: "大阪府"} 大阪府
-                  %option{value: "兵庫県"} 兵庫県
-                  %option{value: "奈良県"} 奈良県
-                  %option{value: "和歌山県"} 和歌山県
-                  %option{value: "鳥取県"} 鳥取県
-                  %option{value: "島根県"} 島根県
-                  %option{value: "岡山県"} 岡山県
-                  %option{value: "広島県"} 広島県
-                  %option{value: "山口県"} 山口県
-                  %option{value: "徳島県"} 徳島県
-                  %option{value: "香川県"} 香川県
-                  %option{value: "愛媛県"} 愛媛県
-                  %option{value: "高知県"} 高知県
-                  %option{value: "福岡県"} 福岡県
-                  %option{value: "佐賀県"} 佐賀県
-                  %option{value: "長崎県"} 長崎県
-                  %option{value: "熊本県"} 熊本県
-                  %option{value: "大分県"} 大分県
-                  %option{value: "宮崎県"} 宮崎県
-                  %option{value: "鹿児島県"} 鹿児島県
-                  %option{value: "沖縄県"} 沖縄県
-        
-            .form-group
-              %label 発送までの日数
-              %span.form-require 必須
-              %div
-                .select-box
-                  .i
-                %select.select-bar
-                  %option ---
-                  %option{value: ""} 1~2日で発送
-                  %option{value: ""} 2~3日で発送
-                  %option{value: ""} 4~7日で発送
-          
-        .sell-content.clearfix
-          %h3.sell-sub__head
-            販売価格(300~9,999,999)
-            %a.question ?
-          .sell-form__box
-            %ul.sell-price
-              %li.form-group
-                .price-bar
-                  %label.l-left
-                    価格
-                    %span.form-require 必須
-                  %label.l-right.sell-price__input
-                    .yen
-                      ¥
-                    %input.input-price{placeholder: "例) 300"}
-                %li.price-bar
-                  %label.l-left
-                    販売手数料(10%)
-                  %label.l-right#display-fee
-                    −
-                %li.price-bar.bold
-                  %label.l-left
-                    販売利益
-                  %label.l-right#display-profit
-                    −
-      
-      .sell-content
-        .caution
-          %p
-            =link_to "禁止されている出品","#",{class: "caution-link"}
-            、
-            =link_to "行為", "#",{class: "caution-link"}
-            を必ずご確認ください。
-          %p
-            またブランド品でシリアルナンバー等がある場合は誤記載ください。
-            =link_to "偽ブランドの販売", "#",{class: "caution-link"}
-            は犯罪であり処罰される可能性があります。
-          %p
-            また、出品をもちまして
-            =link_to "加盟店規約", "#",{class: "caution-link"}
-            に同意したことになります。
+              .form-group
+                %label 商品の状態
+                %span.form-require 必須
+                %div
+                  .select-box
+                    %i
+                    = f.select :condition, [["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"], ["目立った傷や汚れあり", "目立った傷や汚れあり"], ["やや傷や汚れあり", "やや傷や汚れあり"], [" 傷や汚れあり", " 傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]] ,{prompt: "---"},class: "select-bar"
 
-        %button.sell-button.red-button{type: "submit"}
-          出品する
-        = link_to root_path, class: "sell-button gray-button" do
-          もどる
+          .sell-content.clearfix
+            %h3.sell-sub__head
+              配送について
+              %a.question ?
+            .sell-form__box
+              .form-group#select_burden
+                %label 配送料の負担
+                %span.form-require 必須
+                %div
+                  .select-box
+                    %i
+                    = f.select :d_burden,[["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]],{prompt: "---"},class: "d_burden select-bar"
+              
+              .form-group
+                %label 発送元の地域
+                %span.form-require 必須
+                %div
+                  .select-box
+                    .i
+                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"},class: "select-bar"
+          
+              .form-group
+                %label 発送までの日数
+                %span.form-require 必須
+                %div
+                  .select-box
+                    .i
+                    = f.select :d_date,[["1~2日で発送", "1~2日で発送"], ["2~3日で発送","2~3日で発送"],["4~7日で発送", "4~7日で発送"]],{prompt: "---"},class: "select-bar"
+            
+          .sell-content.clearfix
+            %h3.sell-sub__head
+              販売価格(300~9,999,999)
+              %a.question ?
+            .sell-form__box
+              %ul.sell-price
+                %li.form-group
+                  .price-bar
+                    %label.l-left
+                      価格
+                      %span.form-require 必須
+                    %label.l-right.sell-price__input
+                      .yen
+                        ¥
+                      = f.text_field :price, class: "input-price", placeholder: "例) 300"
+                  %li.price-bar
+                    %label.l-left
+                      販売手数料(10%)
+                    %label.l-right#display-fee
+                      −
+                  %li.price-bar.bold
+                    %label.l-left
+                      販売利益
+                    %label.l-right#display-profit
+                      −
+        
+          .sell-content
+            .caution
+              %p
+                =link_to "禁止されている出品","#",{class: "caution-link"}
+                、
+                =link_to "行為", "#",{class: "caution-link"}
+                を必ずご確認ください。
+              %p
+                またブランド品でシリアルナンバー等がある場合は誤記載ください。
+                =link_to "偽ブランドの販売", "#",{class: "caution-link"}
+                は犯罪であり処罰される可能性があります。
+              %p
+                また、出品をもちまして
+                =link_to "加盟店規約", "#",{class: "caution-link"}
+                に同意したことになります。
+
+
+            = f.submit "出品する", class: "sell-button red-button"
+            = link_to root_path, class: "sell-button gray-button" do
+              もどる
+
 
 .signup-footer
   %nav
