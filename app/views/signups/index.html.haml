@@ -3,13 +3,13 @@
     .registration-main-container__header 新規会員登録
     %section.registration-main-container__form--signup
       .registration-main-container__form__content
-        %button.btn-default.signup.mail
+        =link_to new_signup_path, class: "btn-default signup mail" do
           = fa_icon 'envelope-o', class: "signup-icon"
           メールアドレスで登録する
-        %button.btn-default.signup.facebook
+        = link_to "/users/auth/facebook", method: :post, class: "btn-default signup facebook" do
           = fa_icon 'facebook-official', class: "signup-icon"
           Facebookで登録する
-        %button.btn-default.signup.google
+        = link_to "/users/auth/google_oauth2", method: :post, class: "btn-default signup google" do
           = fa_icon 'google', class: "signup-icon"
           Googleで登録する
 .signup-footer.signup
@@ -21,6 +21,6 @@
         =link_to "メルカリ利用規約", "#"
       %li
         =link_to  "特定商取引に関する表記", "#"
-  =link_to "#",class: "signup-footer__logo" do
+  =link_to root_path, class: "signup-footer__logo" do
     =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", width: "100", height: "auto"
   %p &copy;2019 Mercari

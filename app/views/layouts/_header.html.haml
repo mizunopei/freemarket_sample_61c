@@ -3,7 +3,8 @@
     .header-inner
       .header-top
         %h1
-          = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", height: '36', width: '134', alt:"")
+          = link_to root_path do
+            = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1248199994", height: '36', width: '134', alt:"") 
         %form.header-form{action:""}
           %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
           .icon-search
@@ -25,7 +26,23 @@
                   %span ブランドから探す             
         .l-right
           %ul.header-login-nav
-            %li
-              %a.header-btn.btn-red{href: ""} 新規会員登録               
-            %li
-              %a.header-btn.header-login{href: ""} ログイン
+            - if user_signed_in?
+              %li
+                = link_to "#", class: "header-btn header-menu" do
+                  いいね！一覧
+              %li
+                = link_to "#", class: "header-btn header-menu" do
+                  お知らせ
+              %li
+                = link_to "#", class: "header-btn header-menu" do
+                  やることリスト 
+              %li
+                = link_to users_path(current_user), class: "header-btn header-menu" do
+                  マイページ 
+            - else      
+              %li
+                = link_to signups_path, class: "header-btn btn-red" do
+                  新規会員登録       
+              %li
+                = link_to new_user_session_path, class: "header-btn header-login" do
+                  ログイン

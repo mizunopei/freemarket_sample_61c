@@ -8,6 +8,7 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
 
+
     attributes:
       item:
         name: "商品名"
@@ -18,6 +19,8 @@ ja:
         prefecture_id: "発送元の地域"
         d_date: "発送までの日数"
         price: "販売価格"
+
+
   date:
     abbr_day_names:
     - 日
