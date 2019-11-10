@@ -42,9 +42,7 @@ $(function(){
 //要素の削除
   $(document).on("click", ".delete-button", function(e){
     var delete_image = $(this).parent();
-    console.log(delete_image);
     var num = delete_image.data("image");
-    console.log(num);
      $.each(inputs, function(index, input){
        if ((num) == delete_image.data("image")){
         $(this).remove();
