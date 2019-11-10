@@ -2,33 +2,42 @@
 %main
   .items-wrapper
     %section.item__box-container
-      %h1.item__name 【美品】初代 ゲームボーイ カスタム GAME BOY【1102】
-      %p.item__wording
-        『【美品】初代 ゲームボーイ カスタム GAME BOY【1102】』は、30回の取引実績を持つ
-        = link_to "安楽" 
-        さんから出品されました。
-        =link_to "携帯用ゲーム本体/本・音楽・ゲーム"
-        の商品で、未定から1~2日で発送されます。
+      %h1.item__name 
+        ゲームボーイ
       .item__main-content.clearfix
         .item__main__content
-          .owl-carousel
-            .owl-item-inner
-              = link_to image_tag("m70040871468_1.jpg", height:'375', width:'300') 
+          .owl-carousel.owl-loaded.owl-drag
+            .owl-stage-outer
+              .owl-item
+                .owl-item-inner.is-higher-height
+                  = link_to image_tag("m70040871468_1.jpg", class: "owl-lazy") 
+              -# - @.each do ||
+              .item__samjej
+                .owl-dots
+                  .owl-dot
+                    %span
+                    .owl-dot-inner
+                      = link_to image_tag("m70040871468_1.jpg", class: "is-higher-height")
+                      -# = image_tag "#{.name}", class: "is-higher-height"
         %table.item__detail__table
           %tbody
             %tr
               %th 出品者
               %td
-                = link_to "安楽" 
+                =link_to "" do
+                  = @item
                 %div
                   .item__detail__table__user
                     %i.icon-good
+                      = fa_icon "smile-o"
                     %span 30
                   .item__detail__table__user
                     %i.icon-normal
+                      = fa_icon "meh-o"
                     %span 0
                   .item__detail__table__user
                     %i.icon-bad
+                      = fa_icon "frown-o"
                     %span 0
             %tr
               %th カテゴリー
@@ -36,14 +45,16 @@
                 = link_to "#" do
                   本・音楽・ゲーム
                 = link_to "#", class:"item-detail-table-sub-category" do
-                  %i.icon-arrow-right 
-                  %div テレビゲーム                        
+                  %div > テレビゲーム                        
                 = link_to "#", class: ".item-detail-table-sub-sub-category" do
-                  %i.icon-arrow-right
-                    携帯用ゲーム本体
+                  >
+                  携帯用ゲーム本体
             %tr
               %th ブランド
               %td
+                -# = link_to"#" do
+                -#   %div
+                -#   = @item.brand
             %tr
               %th 商品の状態
               %td 目立った傷や汚れなし
@@ -67,107 +78,107 @@
         .item-btn-float-area
           =link_to "#", class:'item-buy-btn' do
             購入画面に進む
-      .item-description.f14
+        -# .text-center
+        -#   = link_to edit_item_path,method: :get,class: "item-delete-btn" do
+        -#     この商品を編集する 
+        -#   = link_to item_path,method: :delete,class: "item-delete-btn" do
+        -#     この商品を削除する
+      .item-description
         %p.item-description-inner
           30年程前に任天堂から販売された、初代ゲームボーイをカスタムしたものです。特に動作不良もなく、内部基盤の状態もいいものです。カスタムも綺麗に仕上がっております。手に入れた段階で、かなり状態がよく、外装にも殆ど傷がございませんでした。しかし、30年前のものですので、長期的な動作の保証はいたし兼ねますので、ご理解の上ご購入ください。
           出品はゲームボーイ本体のみです。写真で起動しているゲームは動作確認のためのものなので、付属しません。個体判別防止のため、写真の背面ナンバーはボカしています。
           ご購入をご検討するかたは、念のためプロフィールをお読み下さい。
          
-          ★低音強化【オススメ】
-          低音に関わるコンデンサの容量を変えることで、低音の鳴りに厚みがでます。使用したコンデンサはニチコンのオーディオ用ハイグレード品です。このカスタムを行っている方は少ないかと思いますので、チップチューンで使用する方はオススメです。
-          
-          ●バックライト
-          バックライトを搭載することで、暗い場所でも画面が見えます。純正ゲームボーイの液晶の色に近づけるため、イエローを使用しております。
-          
-          ●Bivertモジュール
-          バックライトのみだと少々ボヤけて見えるので、視認性を向上させるためのものです。
-          
-          ●純正ジャックのプロサウンド化
-          よくあるカスタムでは、別途イヤホンジャックを取り付けますが、できるだけ純正の外観を保ちたかったので、純正ジャックをプロサウンド化しています。プロサウンド化することによって、ホワイトノイズをかなり軽減しています。
-          
-          ●外装シェル漂白
-          純正の外装シェルや、ボタン類は漂白しております。外装は擦り傷も殆どない、大変綺麗な状態です。
-          
-          ●ボタンパッド交換
-          ボタンパッドは新品に交換済です。
-          
-          ●ガラススクリーン
-          新品のガラススクリーンに交換しています。純正のスクリーンよりも、傷がつきにくくクリアで、視認性がいいです。
-.item__message
-  .item__message__container
-  .item__message__content
-    %form.item__message__content-form{action: "", method: "POST"}
-      %input{name: "__csrf_value", type: "hidden", value: "00adefeae53b9e1902b52ff10f47a8d98a5177ca4ae205a549780bc2621e9abb5cefa45ac2f844e9b477215706423ea6b5ca8ec770d4ca82c43e2706dbbb088e6"}/
-      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %input{name: "item_id", type: "hidden", value: "m70040871468"}/
-      %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
-      %textarea.textarea-default{name: "body", type: "text", value: ""}
-      %button.message-btn-gray{type: "submit"}
-        %span コメントする
-%ul.nav__item
-  %li
-    =link_to "#", class:'nav__item__prev' do
-      .nav__item__arrow-left
-        = fa_icon 'arrow-left', class: "icon_arrow-left"
-      【レア】トミカ ポルシェ
-  %li
-    =link_to "#", class:'nav__item__next' do
-      九谷焼▪湯飲み▪盃■未使用品
-      .nav__item__arrow-right
-        = fa_icon 'arrow-right', class: "icon_arrow-right"
-.item__social
-  %ul.item__social__box
+      .product-button-container.clearfix
+        .product-button-left
+          .product-button-like
+            %button{type: "button", name: "like!", class: "product-button"}
+              = fa_icon "heart"
+              %span.fade-in-down いいね!
+              %span.fade-in-down 0
+        .product-button__report
+          = link_to "", class: "product-button__report" do
+            = fa_icon "flag"
+            %span.fade-in-down 不適切な商品の報告            
+        .product-button-right
+          = link_to 'https://www.mercari.com/jp/safe/description/', target: "_blank", class: "safe-description" do
+            = fa_icon "lock"
+            あんしん・あんぜんへの取り組み
+  .item__message
+    .item__message__container
+    .item__message__content
+      %form.item__message__content-form{action: "", method: "POST"}
+        %input{name: "__csrf_value", type: "hidden", value: "00adefeae53b9e1902b52ff10f47a8d98a5177ca4ae205a549780bc2621e9abb5cefa45ac2f844e9b477215706423ea6b5ca8ec770d4ca82c43e2706dbbb088e6"}/
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %input{name: "item_id", type: "hidden", value: "m70040871468"}/
+        %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
+        %textarea.textarea-default{name: "body", type: "text", value: ""}
+        %button.message-btn-gray{type: "submit"}
+          %span コメントする
+  %ul.nav__item
     %li
-      = link_to "#", target: "_blank", class: 'share-btn' do
-        .icon-facebook
-          = fa_icon 'facebook', class: "icon_facebook"
+      =link_to "#", class:'nav__item__prev' do
+        .nav__item__arrow-left
+          = fa_icon 'arrow-left', class: "icon_arrow-left"
+        【レア】トミカ ポルシェ
     %li
-      = link_to "#", target: "_blank", class: 'share-btn' do
-        .icon-twitter
-          = fa_icon 'twitter', class: "icon_twitter"
-    %li
-      = link_to "#", target: "_blank", class: 'share-btn' do
-        .icon-pinterest
-          = fa_icon 'pinterest', class: "icon_pinterest"
-.items__profile
-  %section.items-box-container.clearfix.related-item-column.items-in-user-profile
-    %h2.items__profile__head
-      = link_to "#", class: 'items__profile__head' do
-        安楽さんのその他の出品
-  .items-box-content
-    %section
-      = link_to "#", class: 'items-box' do
-        %figure.items-box-photo
-          %img.lazyloaded{alt: "【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】", "data-src": :"https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999", src: "https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999"}/
-        .items-box-body
-          %h3.items-box-name.font-2 【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】
-          .items-box-num
-            .items-box-price.font-5 ¥12,000
-            .font-2 
-.items__profile
-  %section.items-box-container.clearfix.related-item-column.items-in-user-profile
-    %h2.items__profile__head
-      = link_to "#", class: 'items-box-head' do
-        携帯用ゲーム本体 （本・音楽・ゲーム） その他の商品 
-  .items-box-content
-    %section
-      = link_to "#", class: 'items-box' do
-        %figure.items-box-photo
-          %img.lazyloaded{alt: "【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】", "data-src": :"https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999", src: "https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999"}/
-        .items-box-body
-          %h3.items-box-name.font-2 【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】
-          .items-box-num
-            .items-box-price.font-5 ¥12,000
-            .font-2 
-%nav.bread-crumbs.pos-bottom
-  %ul
-    %li{itemscope: "", itemtype: ""}
-      = link_to "#", itemprop: "url" do
-        %span{itemprop: "title"} メルカリ
-      %i.icon-arrow-right
-        = fa_icon 'arrow-right', class: "icon_arrow-right"
-    %li{itemscope: "", itemtype: ""}
-      %span{itemprop: "title"} 【美品】初代 ゲームボーイ カスタム GAME BOY【1102】      
+      =link_to "#", class:'nav__item__next' do
+        九谷焼▪湯飲み▪盃■未使用品
+        .nav__item__arrow-right
+          = fa_icon 'arrow-right', class: "icon_arrow-right"
+  .item__social
+    %ul.item__social__box
+      %li
+        = link_to "#", target: "_blank", class: 'share-btn' do
+          .icon-facebook
+            = fa_icon 'facebook', class: "icon_facebook"
+      %li
+        = link_to "#", target: "_blank", class: 'share-btn' do
+          .icon-twitter
+            = fa_icon 'twitter', class: "icon_twitter"
+      %li
+        = link_to "#", target: "_blank", class: 'share-btn' do
+          .icon-pinterest
+            = fa_icon 'pinterest', class: "icon_pinterest"
+  .items__profile
+    %section.items-box-container.clearfix.related-item-column.items-in-user-profile
+      %h2.items__profile__head
+        = link_to "#", class: 'items__profile__head' do
+          安楽さんのその他の出品
+    .items-box-content
+      %section
+        = link_to "#", class: 'items-box' do
+          %figure.items-box-photo
+            %img.lazyloaded{alt: "【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】", "data-src": :"https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999", src: "https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999"}/
+          .items-box-body
+            %h3.items-box-name.font-2 【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】
+            .items-box-num
+              .items-box-price.font-5 ¥12,000
+              .font-2 
+  .items__profile
+    %section.items-box-container.clearfix.related-item-column.items-in-user-profile
+      %h2.items__profile__head
+        = link_to "#", class: 'items-box-head' do
+          携帯用ゲーム本体 （本・音楽・ゲーム） その他の商品 
+    .items-box-content
+      %section
+        = link_to "#", class: 'items-box' do
+          %figure.items-box-photo
+            %img.lazyloaded{alt: "【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】", "data-src": :"https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999", src: "https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999"}/
+          .items-box-body
+            %h3.items-box-name.font-2 【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】
+            .items-box-num
+              .items-box-price.font-5 ¥12,000
+              .font-2 
+  %nav.bread-crumbs.pos-bottom
+    %ul
+      %li{itemscope: "", itemtype: ""}
+        = link_to "#", itemprop: "url" do
+          %span{itemprop: "title"} メルカリ
+        %i.icon-arrow-right
+          = fa_icon 'arrow-right', class: "icon_arrow-right"
+      %li{itemscope: "", itemtype: ""}
+        %span{itemprop: "title"} 【美品】初代 ゲームボーイ カスタム GAME BOY【1102】      
 %aside
   .app__banner
     .app__banner__mine
@@ -203,9 +214,11 @@
           %li.footer__contents__links_link
             = link_to "メルカリロゴ利用ガイドライン", {}, style: "color:#fff"
           %li
-            = link_to "", class: "footer-social-link" 
+            = link_to "", class: "footer-social-link" do
+              = fa_icon 'twitter', class: "icon_twitter"
           %li
-            = link_to "", class: "footer-social-link" 
+            = link_to "", class: "footer-social-link" do
+              = fa_icon 'facebook', class: "icon_facebook"
       .footer-cell
         %h2.footer-head ヘルプ＆ガイド
         %ul
