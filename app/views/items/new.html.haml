@@ -18,7 +18,7 @@
                   :preserve
                     ドラックアンドドロップ
                     またはクリックしてファイルをアップロード
-        
+   
           .sell-content
             .form-group
               %label 商品名
@@ -76,8 +76,8 @@
                 %span.form-require 必須
                 %div
                   .select-box
-                    %i
-                    = f.select :d_burden,[["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]],{prompt: "---"},class: "select-bar"
+                    -# %i
+                    -# = f.select :d_burden,[["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]],{prompt: "---"},class: "select-bar"
                     -# %option ---
                     -# %option{value: ""} 送料込み(出品者負担)
                     -# %option{value: ""} 着払い(購入者負担)
@@ -100,8 +100,8 @@
                 %span.form-require 必須
                 %div
                   .select-box
-                    .i
-                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"},class: "select-bar"
+                    -# .i
+                    -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"},class: "select-bar"
           
               .form-group
                 %label 発送までの日数

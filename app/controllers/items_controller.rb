@@ -3,8 +3,7 @@ class ItemsController < ApplicationController
   end
 
   def show 
-    # @pictures = Picture.where(item_id: @item.id).limit(4)
-    # @user_item = Item.narabikae.where(user_id: @item.user_id).where.not(id: @item.id).limit(3) 
+
   end
   
   def new

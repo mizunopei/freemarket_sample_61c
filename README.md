@@ -62,7 +62,7 @@
 |brand_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
 |like_id|references|foreign_key: true|
-|dellivery_fee|integer|null: false|
+|delivery_fee|integer|null: false|
 |delivery_way|string|null: false|
 |delivery_date|string|null: false|
 |delivery_burden|string|null: false|
