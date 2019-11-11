@@ -27,17 +27,21 @@
         .l-right
           %ul.header-login-nav
             - if user_signed_in?
-              %li
+              %li.head_right-bar
                 = link_to "#", class: "header-btn header-menu" do
+                  = fa_icon "heart-o"
                   いいね！一覧
-              %li
+              %li.head_right-bar
                 = link_to "#", class: "header-btn header-menu" do
+                  = fa_icon "bell-o"
                   お知らせ
-              %li
+              %li.head_right-bar
                 = link_to "#", class: "header-btn header-menu" do
+                  = fa_icon "check"
                   やることリスト 
-              %li
+              %li.head_right-bar
                 = link_to users_path(current_user), class: "header-btn header-menu" do
+                  = image_tag 'member_photo_noimage_thumb.png', size: '20x20'
                   マイページ 
             - else      
               %li
