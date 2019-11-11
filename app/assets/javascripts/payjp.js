@@ -1,10 +1,9 @@
-$(document).on('turbolinks:load', function(){
+$(function(){
   Payjp.setPublicKey('pk_test_43ad001a4c8e49a18daa5471');
 
   var form = $("#card_form")
 
-  $(document).on("click", "#card_submit", function(e){
-    e.preventDefault
+  $("#card_submit").on("click", function(e){
     form.find("input[type=submit]").prop("disabled", true);
 
     var card = {    
@@ -13,7 +12,6 @@ $(document).on('turbolinks:load', function(){
       exp_month: $('select[name="exp_month"]').val(),
       exp_year: $('select[name="exp_year"]').val()
     };
-
     Payjp.createToken(card, function(s, response) {
       if (response.error) {
         alert("入力した情報に誤りがあります。");
@@ -27,7 +25,7 @@ $(document).on('turbolinks:load', function(){
         var token = response.id;
 
         form.append($('<input type="hidden" name="payjp-token" />').val(token));
-        $("#card_form").submit();
+        $("#card_form")[0].submit();
       }
     });
   });
