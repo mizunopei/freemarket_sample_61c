@@ -1,6 +1,5 @@
 class CardsController < ApplicationController
   require "payjp"
-  # before_action :set_card
   layout 'registration'
   
   def new
@@ -25,6 +24,17 @@ class CardsController < ApplicationController
         redirect_to action: :create
       end
     end
+  end
+
+  def pay_confirmation
+    render :pay_confirmation, layout: "signup"
+  end
+
+  def pay
+  end
+
+  def pay_complete
+    render :pay_complete, layout: "signup"
   end
 
 end

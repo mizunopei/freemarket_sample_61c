@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "items#index"
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -12,7 +13,14 @@ Rails.application.routes.draw do
   end
 
   resources :addresses, only: [:new, :create, :update]  
-  resources :cards, only: [:new, :create]  
+  
+  resources :cards, only: [:new, :create]  do
+    collection do
+      get 'pay_confirmation'
+      post 'pay'
+      get 'pay_complete'
+    end
+  end
   
   resources :users do
     collection do
@@ -22,7 +30,6 @@ Rails.application.routes.draw do
     end
   end
 
-root "items#index"
-resources :items
+  resources :items
 
 end
