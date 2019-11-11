@@ -27,7 +27,6 @@ Rails.application.routes.draw do
       get 'logout'
       get 'profile'
       get 'personal'
-      get 'card'
     end
   end
 

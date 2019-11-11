@@ -11,7 +11,4 @@ class UsersController < ApplicationController
   def personal
   end
 
-  def card
-  end
-  
 end
