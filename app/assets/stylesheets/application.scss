@@ -19,8 +19,8 @@
 @import "mypage/mypage-content";
 @import "mypage";
 @import "mypage/profile";
+@import "mypage/personal";
 @import "./pay";
-
 
 
 body{
@@ -33,3 +33,9 @@ body{
 a{
   text-decoration: none;
 }
+
+
+.alert-warning{
+  color:red;
+}
+

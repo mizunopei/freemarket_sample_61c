@@ -8,7 +8,7 @@
         %figure
           = image_tag 'member_photo_noimage_thumb.png', size: '60x60'
         %h2.mypage-content__user-name
-          うみすけ
+          = current_user.nickname
         .mypage-content__numbers
           .mypage-content__rating
             評価  0
