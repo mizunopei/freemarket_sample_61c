@@ -35,7 +35,7 @@
             .registration-main-container__form__content_group
               = f.label "カード番号"
               %span.form-require 必須
-              = f.text_field :card_number, placeholder: "半角数字のみ", value: "", maxlength: "16", class: "input-default number", name: "number"
+              = f.text_field :card_number, placeholder: "半角数字のみ", autocomplete: 'off', maxlength: "16", class: "input-default number", name: "number"
             .registration-main-container__form__content__group
               %div
                 = f.label "有効期限"
