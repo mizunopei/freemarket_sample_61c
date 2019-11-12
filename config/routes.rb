@@ -31,6 +31,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items
+  resources :items 
 
 end

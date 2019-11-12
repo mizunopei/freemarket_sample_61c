@@ -2,9 +2,6 @@ class ItemsController < ApplicationController
   def index
   end
 
-  def show
-  end
-  
   def new
     @item = Item.new
     render :new, layout: "signup"
@@ -17,6 +14,11 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @item = Item.find(params[:id]) 
+    @user = User.find(1) 
   end
 
   private

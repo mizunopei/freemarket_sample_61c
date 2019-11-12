@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_070119) do
+ActiveRecord::Schema.define(version: 2019_11_11_060457) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -66,11 +66,20 @@ ActiveRecord::Schema.define(version: 2019_11_07_070119) do
     t.string "d_burden"
     t.string "d_way"
     t.bigint "prefecture_id"
-    t.integer "d_date"
+    t.string "d_date"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["prefecture_id"], name: "index_items_on_prefecture_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_likes_on_item_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -104,5 +113,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_070119) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "likes", "items"
+  add_foreign_key "likes", "users"
   add_foreign_key "sns_credentials", "users"
 end
