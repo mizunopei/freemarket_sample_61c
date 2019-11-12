@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item= Item.new(item_params)
+    @item = Item.new(item_params)
     if @item.save
       redirect_to action: "index"
     else
@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     item.destroy if item.user_id == current_user.id
+    flash[:notice] = "商品を削除しました"
     redirect_to action: "index"
   end
 
