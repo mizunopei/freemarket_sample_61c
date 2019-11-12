@@ -24,7 +24,6 @@ class User < ApplicationRecord
   has_one :card, dependent: :destroy
   has_many :sns_credentials, dependent: :destroy
   has_many :items
-  has_many :likes
   def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
 
