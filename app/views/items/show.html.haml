@@ -3,22 +3,26 @@
   .items-wrapper
     %section.item__box-container
       %h1.item__name 
-        ゲームボーイ
+        = @item.name
       .item__main-content.clearfix
         .item__main__content
           .owl-carousel.owl-loaded.owl-drag
             .owl-stage-outer
               .owl-item
                 .owl-item-inner.is-higher-height
-                  = link_to image_tag("m70040871468_1.jpg", class: "owl-lazy") 
-              -# - @.each do ||
+                  .owl-lazy
+                    - if @item.images.attached?
+                      - @item.images.each do |image|
+                        = image_tag image
               .item__samjej
                 .owl-dots
                   .owl-dot
                     %span
                     .owl-dot-inner
-                      = link_to image_tag("m70040871468_1.jpg", class: "is-higher-height")
-                      -# = image_tag "#{.name}", class: "is-higher-height"
+                      .is-higher-height
+                        - if @item.images.attached?
+                          - @item.images.each do |image|
+                            = image_tag image
         %table.item__detail__table
           %tbody
             %tr
@@ -57,38 +61,46 @@
                 -#   = @item.brand
             %tr
               %th 商品の状態
-              %td 目立った傷や汚れなし
+              %td
+                = @item.condition
             %tr
               %th 配送料の負担
-              %td 送料込み(出品者負担)
+              %td 
+                = @item.d_burden
             %tr
               %th 配送の方法
-              %td らくらくメルカリ便
+              %td
+                = @item.d_way
             %tr
               %th 配送元地域
-              %td 未定
+              %td
+                = Prefecture.find(@item.prefecture_id)[:name] 
             %tr
               %th 発送日の目安
-              %td 1~2日で発送
+              %td 
+                = @item.d_date
       .item__price__box
-        %span.item__price__box__price ¥15,000
+        %span.item__price__box__price 
+          = "¥#{@item.price}"
         %span.item__price__box__tax (税込)
         %span.item__price__box__fee 送料込み
-      %section.visible-sp
+      - if user_signed_in?
+        .text-center
+          = link_to edit_item_path,method: :get,class: "item-delete-btn" do
+            この商品を編集する 
+          = link_to item_path,method: :delete,class: "item-delete-btn" do
+            この商品を削除する
         .item-btn-float-area
           =link_to "#", class:'item-buy-btn' do
             購入画面に進む
-        -# .text-center
-        -#   = link_to edit_item_path,method: :get,class: "item-delete-btn" do
-        -#     この商品を編集する 
-        -#   = link_to item_path,method: :delete,class: "item-delete-btn" do
-        -#     この商品を削除する
-      .item-description
-        %p.item-description-inner
-          30年程前に任天堂から販売された、初代ゲームボーイをカスタムしたものです。特に動作不良もなく、内部基盤の状態もいいものです。カスタムも綺麗に仕上がっております。手に入れた段階で、かなり状態がよく、外装にも殆ど傷がございませんでした。しかし、30年前のものですので、長期的な動作の保証はいたし兼ねますので、ご理解の上ご購入ください。
-          出品はゲームボーイ本体のみです。写真で起動しているゲームは動作確認のためのものなので、付属しません。個体判別防止のため、写真の背面ナンバーはボカしています。
-          ご購入をご検討するかたは、念のためプロフィールをお読み下さい。
-         
+      - else
+        %section.visible-sp
+          .item-btn-float-area
+            =link_to "#", class:'item-buy-btn' do
+              購入画面に進む
+      %p.item-description-inner
+        = @item.introduction
+
       .product-button-container.clearfix
         .product-button-left
           .product-button-like
@@ -120,10 +132,10 @@
       =link_to "#", class:'nav__item__prev' do
         .nav__item__arrow-left
           = fa_icon 'arrow-left', class: "icon_arrow-left"
-        【レア】トミカ ポルシェ
+        前の商品
     %li
       =link_to "#", class:'nav__item__next' do
-        九谷焼▪湯飲み▪盃■未使用品
+        次の商品
         .nav__item__arrow-right
           = fa_icon 'arrow-right', class: "icon_arrow-right"
   .item__social
@@ -140,36 +152,36 @@
         = link_to "#", target: "_blank", class: 'share-btn' do
           .icon-pinterest
             = fa_icon 'pinterest', class: "icon_pinterest"
-  .items__profile
-    %section.items-box-container.clearfix.related-item-column.items-in-user-profile
-      %h2.items__profile__head
-        = link_to "#", class: 'items__profile__head' do
-          安楽さんのその他の出品
-    .items-box-content
-      %section
-        = link_to "#", class: 'items-box' do
-          %figure.items-box-photo
-            %img.lazyloaded{alt: "【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】", "data-src": :"https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999", src: "https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999"}/
-          .items-box-body
-            %h3.items-box-name.font-2 【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】
-            .items-box-num
-              .items-box-price.font-5 ¥12,000
-              .font-2 
-  .items__profile
-    %section.items-box-container.clearfix.related-item-column.items-in-user-profile
-      %h2.items__profile__head
-        = link_to "#", class: 'items-box-head' do
-          携帯用ゲーム本体 （本・音楽・ゲーム） その他の商品 
-    .items-box-content
-      %section
-        = link_to "#", class: 'items-box' do
-          %figure.items-box-photo
-            %img.lazyloaded{alt: "【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】", "data-src": :"https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999", src: "https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999"}/
-          .items-box-body
-            %h3.items-box-name.font-2 【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】
-            .items-box-num
-              .items-box-price.font-5 ¥12,000
-              .font-2 
+  -# .items__profile
+  -#   %section.items-box-container.clearfix.related-item-column.items-in-user-profile
+  -#     %h2.items__profile__head
+  -#       = link_to "#", class: 'items__profile__head' do
+  -#         安楽さんのその他の出品
+  -#   .items-box-content
+  -#     %section
+  -#       = link_to "#", class: 'items-box' do
+  -#         %figure.items-box-photo
+  -#           %img.lazyloaded{alt: "【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】", "data-src": :"https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999", src: "https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999"}/
+  -#         .items-box-body
+  -#           %h3.items-box-name.font-2 【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】
+  -#           .items-box-num
+  -#             .items-box-price.font-5 ¥12,000
+  -#             .font-2 
+  -# .items__profile
+  -#   %section.items-box-container.clearfix.related-item-column.items-in-user-profile
+  -#     %h2.items__profile__head
+  -#       = link_to "#", class: 'items-box-head' do
+  -#         携帯用ゲーム本体 （本・音楽・ゲーム） その他の商品 
+  -#   .items-box-content
+  -#     %section
+  -#       = link_to "#", class: 'items-box' do
+  -#         %figure.items-box-photo
+  -#           %img.lazyloaded{alt: "【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】", "data-src": :"https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999", src: "https://static.mercdn.net/thumb/photos/m56893952203_1.jpg?1572354999"}/
+  -#         .items-box-body
+  -#           %h3.items-box-name.font-2 【連休中値下・良品】初代 ゲームボーイ カスタム GAME BOY【1029】
+  -#           .items-box-num
+  -#             .items-box-price.font-5 ¥12,000
+  -#             .font-2 
   %nav.bread-crumbs.pos-bottom
     %ul
       %li{itemscope: "", itemtype: ""}
