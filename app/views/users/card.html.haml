@@ -1,0 +1,24 @@
+= render "layouts/header"
+- breadcrumb :card
+= render "layouts/breadcrumbs"
+.main-container
+  = render "users/shared/mypage-side-bar"
+  .mypage-content
+    .mypage_card-content
+      %h2.mypage_card-header
+        支払い方法
+      .mypage_card_inner
+        .card-index
+          .card-sub-header
+            クレジットカード一覧
+        .card-button-box
+          .add-card
+            = link_to "#", class: "add-card_button" do
+              = fa_icon "id-card-o"
+              クレジットカードを追加する
+      .about-pay
+        = link_to "#", class: "howto_pay" do
+          支払い方法について
+          = fa_icon "chevron-right"
+
+=render 'layouts/footer'
