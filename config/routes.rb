@@ -31,7 +31,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root "items#index"
   resources :items 
 
 end
