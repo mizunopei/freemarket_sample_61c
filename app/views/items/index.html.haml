@@ -1,5 +1,7 @@
 .default-container
   = render 'layouts/header'
+  .notifications
+    = flash[:notice]
   .content
     %main.camp-main.camp-page-index{role: "main"}
     %section.camp-keyvisual
