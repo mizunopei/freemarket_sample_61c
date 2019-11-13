@@ -40,14 +40,15 @@
               %label メールアドレス
               %span.form-require 必須
               = f.email_field :email, placeholder: "PC・携帯どちらでも可", autocomplete: "email",  class: "input-default"
-            .registration-main-container__form__content__group
-              %label パスワード
-              %span.form-require 必須
-              = f.password_field :password, placeholder: "7文字以上", class: "input-default"
-            .registration-main-container__form__content__group
-              %label パスワード(確認)
-              %span.form-require 必須
-              = f.password_field :password_confirmation, placeholder: "7文字以上", class: "input-default"
+              - if @omniauth == nil?
+                .registration-main-container__form__content__group
+                  %label パスワード
+                  %span.form-require 必須
+                  = f.password_field :password, placeholder: "7文字以上", class: "input-default"
+                .registration-main-container__form__content__group
+                  %label パスワード(確認)
+                  %span.form-require 必須
+                  = f.password_field :password_confirmation, placeholder: "7文字以上", class: "input-default"
             .registration-main-container__form__content__group
               %h3 本人確認
               %p
