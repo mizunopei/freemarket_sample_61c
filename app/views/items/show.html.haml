@@ -28,7 +28,7 @@
             %tr
               %th 出品者
               %td
-                =link_to ""  do
+                =link_to users_path(current_user) do
                   = @user.nickname
                 %div
                   .item__detail__table__user
@@ -157,7 +157,8 @@
         %i.icon-arrow-right
           = fa_icon 'arrow-right', class: "icon_arrow-right"
       %li{itemscope: "", itemtype: ""}
-        %span{itemprop: "title"} 【美品】初代 ゲームボーイ カスタム GAME BOY【1102】      
+        %span{itemprop: "title"}
+          = @item.name      
 %aside
   .app__banner
     .app__banner__mine
@@ -192,6 +193,7 @@
             = link_to "公式ブログ", {}, style: "color:#fff"
           %li.footer__contents__links_link
             = link_to "メルカリロゴ利用ガイドライン", {}, style: "color:#fff"
+        .footer-icon
           %li
             = link_to "", class: "footer-social-link" do
               = fa_icon 'twitter', class: "icon_twitter"
