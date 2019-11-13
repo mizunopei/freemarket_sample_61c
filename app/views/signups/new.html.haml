@@ -40,7 +40,7 @@
               %label メールアドレス
               %span.form-require 必須
               = f.email_field :email, placeholder: "PC・携帯どちらでも可", autocomplete: "email",  class: "input-default"
-              - if @omniauth == nil?
+              - if @omniauth.nil?
                 .registration-main-container__form__content__group
                   %label パスワード
                   %span.form-require 必須
