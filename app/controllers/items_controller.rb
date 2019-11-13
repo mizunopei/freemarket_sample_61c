@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :buy_info, only: [:pay_confirmation, :pay_complete] 
 
   def index
+    @items = Item.limit(10).order('created_at DESC')
   end
 
   def new

@@ -1,5 +1,6 @@
 .default-container
   = render 'layouts/header'
+  .toppage-content
   .notifications
     = flash[:notice]
   .content
@@ -8,166 +9,174 @@
       %h2
         =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195")
     .item__content
-      %h2.item__content__header 人気のカテゴリー
+      %h2.item__content__header
+        人気のカテゴリー
+      .item__box
+        .item__box--search
+          .item__box--search-genre
+            レディース
+          .item__box--search-genre
+            メンズ
+          .item__box--search-genre
+            家電・スマホ・カメラ
+          .item__box--search-genre
+            おもちゃ・ホビー・グッズ
+    .item__main
+      .item__main__genre
+        %h3.item__main__genre--name
+          レディース新着アイテム
+        .item__main__genre--sub
+          = link_to "もっと見る", href: ""
+      .items-box-content.clearfix.category-brand-list
+        - @items.each do |item| 
+          %section.items-box
+            = link_to item_path(item) do
+              .items-box-photo
+                = image_tag item.images[-1]
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = item.name
+                .items-box-num
+                  .items-box-price.font-5
+                    ="￥#{item.price}"
+    .item__main
+      .item__main__genre
+        %h3.item__main__genre--name
+          メンズ新着アイテム
+        .item__main__genre--sub
+          = link_to "もっと見る", href: ""
+      .items-box-content.clearfix.category-brand-list
+        - @items.each do |item|
+          %section.items-box
+            = link_to item_path(item) do
+              .items-box-photo
+                = image_tag item.images[-1]
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = item.name
+                .items-box-num
+                  .items-box-price.font-5
+                    ="￥#{item.price}"
+    .item__main
+      .item__main__genre
+        %h3.item__main__genre--name
+          家電・スマホ・カメラ新着アイテム
+        .item__main__genre--sub
+          = link_to "もっと見る", href: ""
+      .items-box-content.clearfix.category-brand-list
+        - @items.each do |item|
+          %section.items-box
+            = link_to item_path(item) do
+              .items-box-photo
+                = image_tag item.images[-1]
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = item.name
+                .items-box-num
+                  .items-box-price.font-5
+                    ="￥#{item.price}"
+    .item__main
+      .item__main__genre
+        %h3.item__main__genre--name
+          おもちゃ・ホビー・グッズ新着アイテム
+        .item__main__genre--sub
+          = link_to "もっと見る", href: ""
+      .items-box-content.clearfix.category-brand-list
+        - @items.each do |item|
+          %section.items-box
+            = link_to item_path(item) do
+              .items-box-photo
+                = image_tag item.images[-1]
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = item.name
+                .items-box-num
+                  .items-box-price.font-5
+                    ="￥#{item.price}"
+    .item__content
+      %h2.item__content__header
+        人気のブランド
       .item__box
         %ul.item__box--search
-          %li
-            .item__box--search-genre レディース
-          %li
-            .item__box--search-genre メンズ
-          %li
-            .item__box--search-genre 家電・スマホ・カメラ
-          %li
-            .item__box--search-genre おもちゃ・ホビー・グッズ
-  .item__main
-    .item__main__genre
-      %h3.item__main__genre--name レディース新着アイテム
-      .item__main__genre--sub
-        = link_to "もっと見る", href: ""
-    .items-box-content.clearfix.category-brand-list  
-      %section.items-box
-        %figure.items-box-photo
-          = link_to "/items/4"do
-            = image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-              -# %i.icon-like-border
-              -# %span 1
-      %section.items-box
-        %figure.items-box-photo
-          = link_to "/items/4"do
-            = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-      %section.items-box
-        %figure.items-box-photo
-          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-      %section.items-box
-        %figure.items-box-photo
-          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-      %section.items-box
-        %figure.items-box-photo
-          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-    .items-box-content.clearfix.category-brand-list  
-      %section.items-box
-        %figure.items-box-photo
-          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-              -# %i.icon-like-border
-              -# %span 1
-      %section.items-box
-        %figure.items-box-photo
-          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-      %section.items-box
-        %figure.items-box-photo
-          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-      %section.items-box
-        %figure.items-box-photo
-          %img.lazyloaded{:alt => "【GU】ニット　L size", "data-src" => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", :src => "https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519"}/
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-      %section.items-box
-        %figure.items-box-photo
-          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット　L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2
-  .item__main
-    .item__main__genre
-      %h3.item__main__genre--name メンズ新着アイテム
-      .item__main__genre--sub
-        = link_to "もっと見る", href: ""
-    .items-box-content.clearfix.category-brand-list  
-      %section.items-box
-        %figure.items-box-photo
-          = link_to image_tag("https://static.mercdn.net/thumb/photos/m23571987375_1.jpg?1572502519", alt:"" )
-        .items-box-body
-          %h3.items-box-name.font-2 【GU】ニット L size
-          .items-box-num
-            .items-box-price.font-5 ¥700
-            .font-2  
-  .item__main
-    .item__main__genre
-      %h3.item__main__genre--name 家電・スマホ・カメラ新着アイテム
-      .item__main__genre--sub
-        = link_to "もっと見る", href: ""
+          .item__box--search-genre
+            シャネル
+          .item__box--search-genre
+            ルイヴィトン
+          .item__box--search-genre
+            シュプリーム
+          .item__box--search-genre
+            ナイキ
+    .item__main
+      .item__main__genre
+        %h3.item__main__genre--name
+          シャネル新着アイテム
+        .item__main__genre--sub
+          = link_to "もっと見る", href: ""
+      .items-box-content.clearfix.category-brand-list
+        - @items.each do |item|
+          %section.items-box
+            = link_to item_path(item) do
+              .items-box-photo
+                = image_tag item.images[-1]
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = item.name
+                .items-box-num
+                  .items-box-price.font-5
+                    ="￥#{item.price}"
+    .item__main
+      .item__main__genre
+        %h3.item__main__genre--name
+          ルイヴィトン新着アイテム
+        .item__main__genre--sub
+          = link_to "もっと見る", href: ""
+      .items-box-content.clearfix.category-brand-list
+        - @items.each do |item|
+          %section.items-box
+            = link_to item_path(item) do
+              .items-box-photo
+                = image_tag item.images[-1]
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = item.name
+                .items-box-num
+                  .items-box-price.font-5
+                    ="￥#{item.price}"
+    .item__main
+      .item__main__genre
+        %h3.item__main__genre--name
+          シュプリーム新着アイテム
+        .item__main__genre--sub
+          = link_to "もっと見る", href: ""
+      .items-box-content.clearfix.category-brand-list
+        - @items.each do |item|
+          %section.items-box
+            = link_to item_path(item) do
+              .items-box-photo
+                = image_tag item.images[-1]
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = item.name
+                .items-box-num
+                  .items-box-price.font-5
+                    ="￥#{item.price}"
+    .item__main
+      .item__main__genre
+        %h3.item__main__genre--name
+          ナイキ新着アイテム
+        .item__main__genre--sub
+          = link_to "もっと見る", href: ""
+      .items-box-content.clearfix.category-brand-list
+        - @items.each do |item|
+          %section.items-box
+            = link_to item_path(item) do
+              .items-box-photo
+                = image_tag item.images[-1]
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = item.name
+                .items-box-num
+                  .items-box-price.font-5
+                    ="￥#{item.price}"
 
-  .item__main
-    .item__main__genre
-      %h3.item__main__genre--name おもちゃ・ホビー・グッズ新着アイテム
-      .item__main__genre--sub
-        = link_to "もっと見る", href: ""
-
-.item__content
-  %h2.item__content__header 人気のブランド
-  .item__box
-    %ul.item__box--search_1
-      %li
-        .item__box--search-genre シャネル
-      %li
-        .item__box--search-genre ルイヴィトン
-      %li
-        .item__box--search-genre シュプリーム
-      %li
-        .item__box--search-genre ナイキ
-.item__main
-  .item__main__genre
-    %h3.item__main__genre--name シャネル新着アイテム
-    .item__main__genre--sub
-      = link_to "もっと見る", href: ""
-.item__main
-  .item__main__genre
-    %h3.item__main__genre--name ルイヴィトン新着アイテム
-    .item__main__genre--sub
-      = link_to "もっと見る", href: ""
-.item__main
-  .item__main__genre
-    %h3.item__main__genre--name シュプリーム新着アイテム
-    .item__main__genre--sub
-      = link_to "もっと見る", href: ""
-.item__main
-  .item__main__genre
-    %h3.item__main__genre--name ナイキ新着アイテム
-    .item__main__genre--sub
-      = link_to "もっと見る", href: ""  
 =render 'layouts/footer'
