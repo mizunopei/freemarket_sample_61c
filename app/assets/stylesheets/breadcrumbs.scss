@@ -1,0 +1,13 @@
+.breadcrumbs{
+  height: 50px;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #eee;
+  .breadcrumbs-list{
+    font-size: 15px;
+    padding: 14px 0 10px 210px;
+    .current{
+      font-weight: bold;
+    }
+  }
+}

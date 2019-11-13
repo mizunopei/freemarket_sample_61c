@@ -1,10 +1,14 @@
 class CardsController < ApplicationController
   require "payjp"
-  # before_action :set_card
   layout 'registration'
   
   def new
-    @card = Card.new
+    card = Card.where(user_id: current_user.id)
+    if card.exists?
+      redirect_to root_path
+    else
+      @card = Card.new
+    end
   end
 
   def create

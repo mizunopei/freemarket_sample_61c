@@ -7,7 +7,7 @@
   &-inner {
     width: 1000px;
     margin: 0 auto;
-    padding: 8px 0 0;
+    padding: 8px 0 10px;
   }
   &-top {
     display: -webkit-box;
@@ -109,8 +109,14 @@
     float: right;
   .header-login-nav{
     display: flex;
+    .head_right-bar{
+      padding: 0 5px;
+    }
     & .header-menu{
       color: #000;
+      i{
+        color:rgb(170, 162, 162);
+      }
     }
     }
   }
@@ -132,5 +138,11 @@
     background: #fff;
     color: #0099e8;
   }
-
 }
+.icon_list {
+  color: red;
+}
+.icon_tag {
+  color: #ea352d;
+}
+

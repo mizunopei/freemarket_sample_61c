@@ -21,9 +21,9 @@ class User < ApplicationRecord
   validates :tel, presence: true, uniqueness: true, length: { in: 10..11 }, numericality: { only_integer: true}
    
   has_one :address, dependent: :destroy
-  has_many :cards, dependent: :destroy
+  has_one :card, dependent: :destroy
   has_many :sns_credentials, dependent: :destroy
-
+  has_many :items
   def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
 
