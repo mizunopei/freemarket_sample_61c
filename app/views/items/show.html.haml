@@ -28,8 +28,8 @@
             %tr
               %th 出品者
               %td
-                =link_to users_path(current_user) do
-                  = @user.nickname
+                =link_to ""  do
+                  = @item.user.nickname
                 %div
                   .item__detail__table__user
                     %i.icon-good
@@ -81,15 +81,12 @@
           = "¥#{@item.price}"
         %span.item__price__box__tax (税込)
         %span.item__price__box__fee 送料込み
-      - if user_signed_in?
+      - if user_signed_in? && @item.user.id == current_user.id
         .text-center
-          = link_to edit_item_path,method: :get,class: "item-delete-btn" do
+          = link_to edit_item_path,method: :get,class: "item-select-btn" do
             この商品を編集する 
-          = link_to item_path,method: :delete,class: "item-delete-btn" do
+          = link_to item_path,method: :delete,data:{confirm: "本当に削除しますか？"}, class: "item-select-btn item-delete-btn" do
             この商品を削除する
-        .item-btn-float-area
-          =link_to "#", class:'item-buy-btn' do
-            購入画面に進む
       - else
         %section.visible-sp
           .item-btn-float-area

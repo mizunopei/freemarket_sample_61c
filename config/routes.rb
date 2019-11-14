@@ -14,14 +14,6 @@ Rails.application.routes.draw do
 
   resources :addresses, only: [:new, :create, :update]  
   
-  resources :cards, only: [:new, :create]  do
-    collection do
-      get 'pay_confirmation'
-      post 'pay'
-      get 'pay_complete'
-    end
-  end
-  
   resources :users do
     collection do
       get 'logout'
@@ -31,6 +23,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items 
+  resources :cards, only: [:new, :create]
+
+  resources :items do
+    get 'pay_confirmation'
+    get 'pay'
+    get 'pay_complete'
+  end
 
 end
