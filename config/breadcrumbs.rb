@@ -13,6 +13,12 @@ crumb :profile do
   parent :users
 end
 
+# #出品中
+# crumb :exhibit
+#   link "出品した商品-出品中", exhibit_users_path
+#   parent :exhibit
+# end
+
 #支払い方法
 crumb :card do
   link "支払い方法", card_users_path

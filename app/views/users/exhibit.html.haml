@@ -1,0 +1,34 @@
+=render 'layouts/header'
+- breadcrumb :users
+= render "layouts/breadcrumbs"
+.main-container
+  =render 'users/shared/mypage-side-bar'
+  .mypage-content
+    %section.mypage-content__second-tab-container
+      %h2.mypage-content__tab-head 
+        出品した商品
+      %ul.mypage-content__tabs
+        %li.mypage-content__tab1.mypage-content__tab--active
+          %h3
+            = link_to '#' do
+              出品中
+        %li.mypage-content__tab1
+          %h3
+            = link_to '#' do
+              取引中
+        %li.mypage-content__tab1
+          %h3
+            = link_to '#' do
+              売却済み
+      .mypage-content__tab-content
+        %ul.mypage-content__item-list
+          %li.mypage-content__not-found-item
+            出品中の商品がありません
+    %ul.mypage-history.pager
+      %li.pager-prev.pager-cell
+        = link_to "#" do
+          ＜
+      %li.pager-next.pager-cell
+        = link_to "#" do
+          ＞
+=render 'layouts/footer'
