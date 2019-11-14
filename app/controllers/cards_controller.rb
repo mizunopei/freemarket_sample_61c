@@ -31,15 +31,4 @@ class CardsController < ApplicationController
     end
   end
 
-  def pay_confirmation
-    render :pay_confirmation, layout: "signup"
-  end
-
-  def pay
-  end
-
-  def pay_complete
-    render :pay_complete, layout: "signup"
-  end
-
 end
