@@ -51,6 +51,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id]) 
+    @images = @item.images.order(id: "DESC")
   end
 
   def destroy
