@@ -90,7 +90,7 @@
       - else
         %section.visible-sp
           .item-btn-float-area
-            =link_to "#", class:'item-buy-btn' do
+            =link_to item_pay_confirmation_path(@item), class:'item-buy-btn' do
               購入画面に進む
       %p.item-description-inner
         = @item.introduction
