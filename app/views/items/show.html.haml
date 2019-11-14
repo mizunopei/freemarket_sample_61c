@@ -11,24 +11,22 @@
               .owl-item
                 .owl-item-inner.is-higher-height
                   .owl-lazy
-                    - if @item.images.attached?
-                      - @item.images.each do |image|
-                        = image_tag image
+                    - @images.each do |image| 
+                      = image_tag image
               .item__samjej
                 .owl-dots
                   .owl-dot
                     %span
                     .owl-dot-inner
                       .is-higher-height
-                        - if @item.images.attached?
-                          - @item.images.each do |image|
-                            = image_tag image
+                        - @images.each do |image|
+                          = image_tag image
         %table.item__detail__table
           %tbody
             %tr
               %th 出品者
               %td
-                =link_to ""  do
+                =link_to users_path(current_user) do
                   = @item.user.nickname
                 %div
                   .item__detail__table__user
@@ -150,9 +148,7 @@
     %ul
       %li{itemscope: "", itemtype: ""}
         = link_to "#", itemprop: "url" do
-          %span{itemprop: "title"} メルカリ
-        %i.icon-arrow-right
-          = fa_icon 'arrow-right', class: "icon_arrow-right"
+          %span{itemprop: "title"} メルカリ ‹
       %li{itemscope: "", itemtype: ""}
         %span{itemprop: "title"}
           = @item.name      
