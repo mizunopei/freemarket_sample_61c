@@ -68,11 +68,13 @@
         &--sub {
           font-size: 14px;
           padding: 5px 16px 5px 5px;
-          color: rgb(0, 149, 238);
-            display: block;
-            font-weight: 600;
-            position: relative;
+          display: block;
+          font-weight: 600;
+          position: relative;
+          a{
+            color:  rgb(0, 149, 238);
           }
+        }
         &--sub::before {
         bottom: 0px;
         content: "";
