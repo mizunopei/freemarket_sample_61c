@@ -41,22 +41,8 @@
                 %div
                   .select-box
                     .i
-                    %select.select-bar
-                      %option ---
-                      %option{value: ""} レディース
-                      %option{value: ""} メンズ
-                      %option{value: ""} ベビー・キッズ
-                      %option{value: ""} インテリア・住まい・小物
-                      %option{value: ""} 本・音楽・ゲーム
-                      %option{value: ""} おもちゃ・ホビー・グッズ
-                      %option{value: ""} コスメ・香水・美容
-                      %option{value: ""} 家電・スマホ・カメラ
-                      %option{value: ""} スポーツ・レジャー
-                      %option{value: ""} ハンドメイド
-                      %option{value: ""} チケット
-                      %option{value: ""} 自動車・オートバイ
-                      %option{value: ""} その他
-            
+                    = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},class: "select-bar"
+
               .form-group
                 %label 商品の状態
                 %span.form-require 必須
