@@ -50,7 +50,8 @@
     }
   }
   .item__main {
-    padding: 42px 200px 15px;
+    margin: 0 200px 0;
+    padding: 42px 0 15px;
     background-color: rgb(245, 245,245);
     &__genre {
       align-items: flex-end;
