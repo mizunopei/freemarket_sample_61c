@@ -1,67 +1,65 @@
-.items-box-content {
-  width: auto;
-  margin: 0 auto;
-  content: '';
+.items-box-content.clearfix.category-brand-list{
+  width: 1040px;
   display: flex;
-  clear: both; 
-}
-.items-box {
-  position: relative;
-  float: left;
-  width: 220px;
-  margin: 0 20px 20px 0;
-  background: #fff;
-  padding-bottom: 15px;
-}
-.items-box a {
-  display: block;
-  color: #333;
-}
-.items-box-photo {
-  overflow: hidden;
-  position: relative;
-  width: 220px;
-  height: 220px;
-  right: 40px;
-}
-.items-box-photo img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 210px;
-}
-.items-box-body {
-  position: relative;
-  height: 20px;
-  padding: 34px 12px;
-}
-.items-box-name {
-  font-size: 14px;
-}
-.items-box-num {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-top: 8px;
-}
-.items-box-price {
-  z-index: 2;
-  position: absolute;
-  top: -15px;
-  left: 0;
-  padding: 4px 12px 4px 8px;
-  border-radius: 0 16px 16px 0;
-  font-weight: 600;
-  color: #fff;
-  background-color: rgba(0,0,0,0.3);
+  flex-wrap: wrap;
+  .items-box {
+    width: 188px;
+    margin: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #fff;
+    border: 0px solid transparent;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.18);
+    &:hover {
+      outline: 1px solid  rgb(0, 149, 238);
+    }
+  }
+  .items-box-photo {
+    width: 188px;
+    height: 188px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    img{
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      vertical-align: top;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+  .items-box-body {
+    position: relative;
+    height: 20px;
+    padding: 34px 12px;
+  }
+  .items-box-name {
+    font-size: 14px;
+    color: #000;
+  }
+  .items-box-num {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  .items-box-price {
+    z-index: 2;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    padding: 4px 12px 4px 8px;
+    border-radius: 0 16px 16px 0;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgba(0,0,0,0.3);
+  }
 }

@@ -25,22 +25,40 @@ class SignupsController < ApplicationController
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
     session[:birth_day] = birthday_join
+    session[:provider] = session[:provider]
+    session[:uid] = session[:uid]
     @user = User.new
   end
 
   def create
-    @user= User.new(
-      nickname: session[:nickname], 
-      email: session[:email], 
-      password: session[:password], 
-      password_confirmation: session[:password_confirmation], 
-      last_name: session[:last_name], 
-      first_name: session[:first_name], 
-      last_name_kana: session[:last_name_kana], 
-      first_name_kana: session[:first_name_kana], 
-      birth_day: session[:birth_day], 
-      tel: user_params[:tel]
-      )
+    if session[:provider].present? && session[:uid].present?
+      password = set_password
+      @user= User.new(
+        nickname: session[:nickname], 
+        email: session[:email], 
+        password: password, 
+        password_confirmation: password, 
+        last_name: session[:last_name], 
+        first_name: session[:first_name], 
+        last_name_kana: session[:last_name_kana], 
+        first_name_kana: session[:first_name_kana], 
+        birth_day: session[:birth_day], 
+        tel: user_params[:tel]
+        )
+    else
+      @user= User.new(
+        nickname: session[:nickname], 
+        email: session[:email], 
+        password: session[:password], 
+        password_confirmation: session[:password_confirmation], 
+        last_name: session[:last_name], 
+        first_name: session[:first_name], 
+        last_name_kana: session[:last_name_kana], 
+        first_name_kana: session[:first_name_kana], 
+        birth_day: session[:birth_day], 
+        tel: user_params[:tel]
+        )
+    end
     if @user.save
       sign_in User.find(@user.id) unless user_signed_in?
       redirect_to new_address_path
@@ -68,6 +86,15 @@ class SignupsController < ApplicationController
     end
 
     date = Date.new(date_year.to_i, date_month.to_i, date_day.to_i)
+  end
+
+  def set_password
+    password = Devise.friendly_token.first(7)
+    if password.match(/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i)
+      return password
+    else
+      set_password
+    end
   end
 
   def user_params
