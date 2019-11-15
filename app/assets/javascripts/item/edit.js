@@ -8,15 +8,11 @@ $(function(){
 $(document).on("click", ".delete-button", function(e){
   var delete_image = $(this).parent();
   delete_image.remove();
-  console.log(delete_image)
   var num = delete_image.data("image");
-  console.log(num)
    $.each(inputs, function(index, input){
      if ((num) == delete_image.data("image")){
       $(this).remove();
-      console.log(this)
       delete_image.remove();
-      console.log(delete_image)
      
   //要素のリセット
       images.splice(num, 1);
@@ -30,7 +26,6 @@ $(document).on("click", ".delete-button", function(e){
    
   })
 });
-
 
   //販売価格などの表示
     var price = $(".input-price").val();
