@@ -100,7 +100,10 @@
     margin-top: 8px;
   }
   .l-left {
-    float: left;   
+    float: left;
+    & h2{
+      margin-right: 10px;
+    } 
   }  
   &-nav{
     display: flex;
@@ -137,6 +140,7 @@
     background: #ea352d;
     border: 1px solid #ea352d;
     color: #fff;
+    margin-right: 10px;
   }
    &-login {
     display: block;
