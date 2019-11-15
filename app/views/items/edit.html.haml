@@ -46,7 +46,8 @@
                 %div
                   .select-box
                     .i
-                    = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},class: "select-bar"
+                      = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},class: "select-bar"
+
               
               .form-group
                 %label 商品の状態

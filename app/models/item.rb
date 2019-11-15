@@ -2,10 +2,12 @@ class Item < ApplicationRecord
   has_many_attached :images
   
   belongs_to :user
-  belongs_to :category
+  
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
+  belongs_to_active_hash :category
+  
   validates :name, presence: true, length:{maximum: 40}
   validates :introduction, presence: true, length:{maximum: 1000}
   validates :condition, presence: true
