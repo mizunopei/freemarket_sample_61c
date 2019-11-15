@@ -12,6 +12,11 @@
             %p 最大5枚までアップロード出来ます
             .sell-upload__image-box
               #preview
+                - @item.images.each_with_index do |image, index|
+                  .image-dropbox{data: {image: "#{image.id}"}}
+                    = image_tag image
+                    .delete-button 削除
+
               %label.input-zone
                 = f.file_field :images, class: "sell-upload__file" , multiple: true
                 .visible-pc
@@ -42,7 +47,7 @@
                   .select-box
                     .i
                     = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},class: "select-bar"
-
+              
               .form-group
                 %label 商品の状態
                 %span.form-require 必須
@@ -63,7 +68,15 @@
                   .select-box
                     %i
                     = f.select :d_burden,[["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]],{prompt: "---"},class: "d_burden select-bar"
-              
+
+              .form-group#d_way
+                %label 配送の方法
+                %span.form-require 必須
+                %div
+                  .select-box
+                    %i
+                    = f.select :d_way,[@item.d_way],{prompt: "---"},class: "d_burden select-bar", name: "item[:d_way]"
+
               .form-group
                 %label 発送元の地域
                 %span.form-require 必須
@@ -123,7 +136,7 @@
                 に同意したことになります。
 
 
-            = f.submit "出品する", class: "sell-button red-button"
+            = f.submit "変更する", class: "sell-button red-button"
             = link_to root_path, class: "sell-button gray-button" do
               もどる
 
