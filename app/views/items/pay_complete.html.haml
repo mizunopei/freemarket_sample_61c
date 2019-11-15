@@ -10,25 +10,30 @@
     %section.purchase-main-container__content
       .purchase-main-container__content__item
         .purchase-main-container__content__item__inner
-          =image_tag "m70040871468_1.jpg", class: "purchase-main-container__content__item__inner__image"
+          =image_tag @image, class: "purchase-main-container__content__item__inner__image"
           %p.purchase-main-container__content__item__inner__name
-            美品】初代 ゲームボーイ カスタム GAME BOY【1102】【美品】初代 ゲームボーイ カスタム GAME BOY【1102】【美品】初代 ゲームボーイ カスタム GAME BOY【1102】
+            = @item.name
         %form.purchase-main-container__content__item__form
           .purchase-main-container__content__item__form
             .purchase-main-container__content__item__form__price
               .yen-price 
-                ￥8,600 
+                ￥
+                = @item.price.to_s(:delimited)
                 %span 送料込み
       .purchase-main-container__content__user-info
         .purchase-main-container__content__user-info__inner
           .purchase-main-container__content__user-info__inner__text
             %h3 配送先
             %address
-              〒150-0041
+              〒
+              = @address.postal_code.to_s.insert(3, '-')
               %br
-              東京都 渋谷区 神南１丁目１８−２
+              = @address.area
+              = @address.city
+              = @address.address
               %br
-              メルカリ 太郎
+              = @address.d_last_name
+              = @address.d_first_name
             .purchase-main-container__content__user-info__inner__fix 
               = link_to "#" do
                 変更する＞
@@ -36,9 +41,16 @@
         .purchase-main-container__content__user-info__inner
           .purchase-main-container__content__user-info__inner__text
             %h3 支払い方法
-            **** **** ****4242
+            **** **** ****
+            = @card.last4
             %br
-            12 / 20
+            - if @card.exp_month < 10
+              = "0#{@card.exp_month.to_s}"
+            - else
+              = @card.exp_month
+            \/ 
+            = @card.exp_year % 100
+          .purchase-main-container__content__user-info__inner__fix 
           .purchase-main-container__content__user-info__inner__fix 
             = link_to "#" do
               変更する＞

@@ -12,13 +12,19 @@
 }
 .footer-cell {
   padding: 0 20px 0 0;
-  // width: 20%;
-  // text-align: center;
 }
 .global-footer a {
   color: #fff;
   font-size: 12px;
   line-height: 3em;
+}
+.footer-icon {
+  list-style: none;
+  display: flex;
+  letter-spacing: 30px;
+  & a {
+    font-size: 30px;
+  }
 }
 .footer-logo {
   display: inline-block;
