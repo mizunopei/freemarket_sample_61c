@@ -8,5 +8,6 @@ FactoryBot.define do
     prefecture_id   {"1"}
     d_date          {"1"}
     price           {"2500"}
+    category_id     {"1"}
   end
 end
