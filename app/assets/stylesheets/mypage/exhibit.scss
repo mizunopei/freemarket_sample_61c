@@ -144,46 +144,34 @@
   border: 1px solid #ccc;
   font-size: 14px;
   line-height: 42px;
-}
-.pager-cell a {
-  display: block;
-  color: #333;
+  & a {
+    display: block;
+    color: #333;
+  }
 }
 .pager-next {
   float: right;
 }
-
-
 .tab-content .tab-pane.active {
   display: block;
   background-color: #fff;
-  border: 1px solid #ea352d;
+  border: 1px;
 }
 .mypage-item-link {
   display: block;
   min-height: 80px;
   padding: 16px;
   color: #333;
-}
-.mypage-item-link figure {
-  position: relative;
-  overflow: hidden;
-  float: left;
-  width: 48px;
-  height: 48px;
-}
-  
-.mypage-item-list img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  border-bottom: 1px solid #eee;
+  & img {
     z-index: 1;
-    width: 100%;
-}
-.mypage-item-body.show-stock-item {
-  margin-right: 100px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-top: 13px
+  }
 }
 .mypage-item-text {
   overflow: hidden;
@@ -194,22 +182,15 @@
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   line-height: 1.5;
+  padding: 7px 0px 0 20px;
 }
 .listing-item-count {
   vertical-align: 2px;
-  margin: 0 6px 0 0;
-}
-.listing-item-count i {
-  vertical-align: middle;
-  color: #ccc;
-}
-.listing-item-count {
-  vertical-align: 2px;
-  margin: 0 6px 0 0;
-}
-.listing-item-count i {
-  vertical-align: middle;
-  color: #ccc;
+  margin: 0 7px 0 17px;
+  & i {
+    vertical-align: middle;
+    color: #ccc;
+  }
 }
 .mypage-item-status.awaiting {
   background: #0099e8;
@@ -221,6 +202,12 @@
   border-radius: 2px;
   font-size: 12px;
   color: #fff;
+}
+.mypage-arrow {
+  float: right;
+  & a {
+    color: #333;
+  }
 }
 .bold {
   font-weight: 600;

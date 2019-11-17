@@ -20,36 +20,40 @@
           %h3
             = link_to '#' do
               売却済み
-      .mypage-content__tab-content
-        %ul.mypage-content__item-list
-          %li.mypage-content__not-found-item
-            出品中の商品がありません  
-    .tab-content
-      %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
-        %li
-          .mypage-item-link
-            =link_to ""
-            %figure
-              %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m30115875552_1.jpg?1573796800", :src => "//static.mercdn.net/thumb/photos/m30115875552_1.jpg?1573796800"}/
-            .mypage-item-body.show-stock-item
-              .mypage-item-text
-                ゲームボーイ
-              %div
-                %span.listing-item-count
-                  %i.icon-like-border
-                    = fa_icon "heart-o"
-                  %span 0
-                %span.listing-item-count
-                  %i.icon-message
-                    = fa_icon "smile-o"
-                  %span 0
-                %span.mypage-item-status.awaiting
-                  出品中
-    %ul.mypage-history.pager
-      %li.pager-prev.pager-cell
-        = link_to "#" do
-          ＜
-      %li.pager-next.pager-cell
-        = link_to "#" do
-          ＞
+      -# .mypage-content__tab-content
+      -#   %ul.mypage-content__item-list
+      -#     %li.mypage-content__not-found-item
+      -#       出品中の商品がありません  
+      .tab-content
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+          %li
+            - if @item != nil
+              - @item.each do |item|
+                .mypage-item-link
+                  = link_to item_path(item) do
+                    = image_tag item.images[-1]
+                  .mypage-item-body.show-stock-item
+                    .mypage-item-text
+                      = item.name
+                    %div
+                      %span.listing-item-count
+                        %i.icon-like-border
+                          = fa_icon "heart-o"
+                        %span 0
+                      %span.listing-item-count
+                        %i.icon-message
+                          = fa_icon "smile-o"
+                        %span 0
+                      %span.mypage-item-status.awaiting
+                        出品中
+                      .mypage-arrow
+                        = link_to "#" do
+                          ＞
+      %ul.mypage-history.pager
+        %li.pager-prev.pager-cell
+          = link_to "#" do
+            ＜
+        %li.pager-next.pager-cell
+          = link_to "#" do
+            ＞
 =render 'layouts/footer'
