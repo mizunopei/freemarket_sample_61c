@@ -40,7 +40,7 @@
                   = fa_icon "check"
                   やることリスト 
               %li.head_right-bar
-                = link_to users_path(current_user), class: "header-btn header-menu" do
+                = link_to user_path(current_user), class: "header-btn header-menu" do
                   = image_tag 'member_photo_noimage_thumb.png', size: '20x20'
                   マイページ 
             - else      

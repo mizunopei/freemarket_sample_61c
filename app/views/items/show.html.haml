@@ -26,7 +26,7 @@
             %tr
               %th 出品者
               %td
-                =link_to users_path(current_user) do
+                =link_to user_path(@item.user) do
                   = @item.user.nickname
                 %div
                   .item__detail__table__user
