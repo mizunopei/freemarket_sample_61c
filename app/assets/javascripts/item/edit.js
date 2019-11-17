@@ -1,31 +1,33 @@
 $(function(){
-  var images = [];
-  var inputs =[];
-  if (document.URL.match(/item/) && document.URL.match(/edit/)){
+if (document.URL.match(/item/) && document.URL.match(/edit/)){
 
 
-// //要素の削除
+//削除する画像のクリックイベント発火
 $(document).on("click", ".delete-button", function(e){
+  //view上で削除するimageを見えなくする
+  e.preventDefault;
   var delete_image = $(this).parent();
   delete_image.remove();
+
+  //削除するimageのidを取得
   var num = delete_image.data("image");
-   $.each(inputs, function(index, input){
-     if ((num) == delete_image.data("image")){
-      $(this).remove();
-      delete_image.remove();
-     
-  //要素のリセット
-      images.splice(num, 1);
-      inputs.splice(num, 1);
-      if(inputs.length ==0) {
-        $("#item_images").attr({
-          "data-image": 0
-        })
-      }
-   };
-   
-  })
+  var url = $("#image_delete").attr("action");
+
+  //クリックイベントで取得したimageのidをcontrollerに送る
+  $.ajax({
+    url:  url,
+    type:     "GET",
+    data:     {keyword: num},
+    dataType: "json",
+    success: function(data){
+      console.log("ok")
+    },
+    error: function(data){
+      console.log("error")
+    }
+  });
 });
+
 
   //販売価格などの表示
     var price = $(".input-price").val();
@@ -41,5 +43,6 @@ $(document).on("click", ".delete-button", function(e){
       $("#display-fee").text("-")
       $("#display-profit").text("−")
     }
+   
 }
 })
