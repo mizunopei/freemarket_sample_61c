@@ -18,13 +18,7 @@ $(document).on("click", ".delete-button", function(e){
     url:  url,
     type:     "GET",
     data:     {keyword: num},
-    dataType: "json",
-    success: function(data){
-      console.log("ok")
-    },
-    error: function(data){
-      console.log("error")
-    }
+    dataType: "json"
   });
 });
 
