@@ -140,7 +140,7 @@
             = f.submit "変更する", class: "sell-button red-button"
             = link_to root_path, class: "sell-button gray-button" do
               もどる
-
+            %button{action: item_delete_image_path(@item), id:"image_delete", style: "display:none"}
 
 .signup-footer
   %nav
