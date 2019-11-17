@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   resources :signups, only: [:index, :new, :create] do
     collection do
-      get 'login'
       get 'sms_confirmation'
       get 'complete'
     end

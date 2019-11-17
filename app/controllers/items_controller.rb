@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
+  before_action :redirect_signin, only: [:new, :pay_confirmation, :pay_complete] 
   before_action :buy_info, only: [:pay_confirmation, :pay_complete] 
+  
 
   def index
     @items = Item.limit(10).order('created_at DESC')
@@ -83,7 +85,9 @@ def delete_image
   image.purge
 end
 
+
   private
+  
   def item_params
     params.require(:item).permit(:name, :introduction, :condition, :d_burden, :d_way, :d_date,:prefecture_id, :price,:category_id,images: []).merge(user_id: current_user.id)
   end
@@ -100,6 +104,11 @@ end
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @card = customer.cards.retrieve(@card.card_id)
     return @card
+  end
+
+  def redirect_signin
+    flash[:alert] = "ログインが必要です"
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end

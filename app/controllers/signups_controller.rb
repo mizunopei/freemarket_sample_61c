@@ -3,10 +3,6 @@ class SignupsController < ApplicationController
 
   layout 'registration'
 
-  def login
-    render :login, layout: "signup"
-  end
-
   def index
     render :index, layout: "signup"
   end
