@@ -53,7 +53,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id]) 
+    @item = Item.find(params[:id])
     @images = @item.images.order(id: "DESC")
   end
 
@@ -70,18 +70,21 @@ class ItemsController < ApplicationController
 
   def update
     item = Item.find(params[:id])
-    images = item.images.attachments
-    images.purge
-
-
-
     if item.user.id == current_user.id
       item.update(item_params)
     end
     flash[:notice] = "商品の更新をしました"
     redirect_to :root
-
   end
+
+
+def delete_image
+  item = Item.find(params[:item_id])
+  images = item.images.attachments
+  image = images.find(params[:keyword])
+  image.purge
+end
+
 
   private
   
