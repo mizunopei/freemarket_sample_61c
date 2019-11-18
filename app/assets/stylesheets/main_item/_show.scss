@@ -385,19 +385,9 @@ main {
     display: inline-block;
     font-size: 14px;
     line-height: 1.2;
-}
-.bread-crumbs .icon-arrow-right {
-    margin: 0 8px;
-    font-size: 9px;
-    color: #888;
-    display: inline-block;
-    font-family: 'icon-font';
-    font-style: normal;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
+    & a {
+      color: #333;
+    }
 }
 .text-center {
     text-align: center;

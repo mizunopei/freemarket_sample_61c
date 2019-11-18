@@ -11,24 +11,22 @@
               .owl-item
                 .owl-item-inner.is-higher-height
                   .owl-lazy
-                    - if @item.images.attached?
-                      - @item.images.each do |image|
-                        = image_tag image
+                    - @images.each do |image| 
+                      = image_tag image
               .item__samjej
                 .owl-dots
                   .owl-dot
                     %span
                     .owl-dot-inner
                       .is-higher-height
-                        - if @item.images.attached?
-                          - @item.images.each do |image|
-                            = image_tag image
+                        - @images.each do |image|
+                          = image_tag image
         %table.item__detail__table
           %tbody
             %tr
               %th 出品者
               %td
-                =link_to ""  do
+                =link_to user_path(@item.user) do
                   = @item.user.nickname
                 %div
                   .item__detail__table__user
@@ -47,12 +45,13 @@
               %th カテゴリー
               %td
                 = link_to "#" do
-                  本・音楽・ゲーム
-                = link_to "#", class:"item-detail-table-sub-category" do
-                  %div > テレビゲーム                        
-                = link_to "#", class: ".item-detail-table-sub-sub-category" do
-                  >
-                  携帯用ゲーム本体
+                  = @item.category.name
+                //カテゴリー実装時に追記する
+                -# = link_to "#", class:"item-detail-table-sub-category" do
+                -#   %div > テレビゲーム                        
+                -# = link_to "#", class: ".item-detail-table-sub-sub-category" do
+                -#   >
+                -#   携帯用ゲーム本体
             %tr
               %th ブランド
               %td
@@ -90,7 +89,7 @@
       - else
         %section.visible-sp
           .item-btn-float-area
-            =link_to "#", class:'item-buy-btn' do
+            =link_to item_pay_confirmation_path(@item), class:'item-buy-btn' do
               購入画面に進む
       %p.item-description-inner
         = @item.introduction
@@ -150,9 +149,7 @@
     %ul
       %li{itemscope: "", itemtype: ""}
         = link_to "#", itemprop: "url" do
-          %span{itemprop: "title"} メルカリ
-        %i.icon-arrow-right
-          = fa_icon 'arrow-right', class: "icon_arrow-right"
+          %span{itemprop: "title"} メルカリ ‹
       %li{itemscope: "", itemtype: ""}
         %span{itemprop: "title"}
           = @item.name      

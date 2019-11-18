@@ -6,7 +6,6 @@ $(function(){
   var inputbox = $(".input-zone");
   var image_data = $(".data-image");
   var select_burden = $("#select_burden");
-  
 
 
   $(document).on("change", "#item_images", function(e){
@@ -25,7 +24,6 @@ $(function(){
      //ファイルをデータとして扱う
      reader.readAsDataURL(file);
      images.push(img);
-      $("#preview").empty();
       $.each(images, function(index, image){
         image.attr("data-image", index);
         preview.append(image[0]);

@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   resources :signups, only: [:index, :new, :create] do
     collection do
-      get 'login'
       get 'sms_confirmation'
       get 'complete'
     end
@@ -30,6 +29,7 @@ Rails.application.routes.draw do
     get 'pay_confirmation'
     get 'pay'
     get 'pay_complete'
+    get 'delete_image'
   end
 
 end
