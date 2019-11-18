@@ -13,11 +13,11 @@ class ApplicationController < ActionController::Base
     Rails.env.production?
   end
 
-  def basic_auth
-    authenticate_or_request_with_http_basic do |username, password|
-      username: Rails.application.credentials.dig(:basic, :username) && password: Rails.application.credentials.dig(:basic, :password)
-    end
-  end
+  # def basic_auth
+  #   authenticate_or_request_with_http_basic do |username, password|
+  #     username: Rails.application.credentials.dig(:basic, :username) && password: Rails.application.credentials.dig(:basic, :password)
+  #   end
+  # end
 
 
   def configure_permitted_parameters
