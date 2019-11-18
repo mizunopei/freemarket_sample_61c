@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get 'profile'
       get 'personal'
       get 'card'
+      get 'exhibit'
     end
   end
 
