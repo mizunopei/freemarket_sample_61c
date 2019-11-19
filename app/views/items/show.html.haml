@@ -71,7 +71,7 @@
                 = @item.d_date
       .item__price__box
         %span.item__price__box__price 
-          = "¥#{@item.price}"
+          = "¥#{@item.price.to_s(:delimited)}"
         %span.item__price__box__tax (税込)
         %span.item__price__box__fee 送料込み
       - if user_signed_in? && @item.user.id == current_user.id
