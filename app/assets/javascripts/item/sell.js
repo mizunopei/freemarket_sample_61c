@@ -80,19 +80,19 @@ $(function(){
                               <span class="form-require">必須</span>
                               <div>
                                 <div class="select-box">
-                                  <i></i>
-                                    <select class="select-bar" name="item[d_way]" id="item_d_way">
-                                      <option>---</option>
-                                      <option value ="未定">未定</option>
-                                      <option value="らくらくメルカリ便">らくらくメルカリ便</option>
-                                      <option value ="ゆうメール">ゆうメール</option>
-                                      <option value="レターパック">レターパック</option>
-                                      <option value ="普通郵便(定形、定形外)">普通郵便(定形、定形外)</option>
-                                      <option value ="クロネコヤマト">クロネコヤマト</option>
-                                      <option value ="ゆうパック">ゆうパック</option>
-                                      <option value= "クリックポスト">クリックポスト</option>
-                                      <option value ="ゆうパケット">ゆうパケット</option>
-                                    </select>
+                                  <i class="fa fa-chevron-down select-chevron"></i>
+                                  <select class="select-bar" name="item[d_way]" id="item_d_way">
+                                    <option>---</option>
+                                    <option value ="未定">未定</option>
+                                    <option value="らくらくメルカリ便">らくらくメルカリ便</option>
+                                    <option value ="ゆうメール">ゆうメール</option>
+                                    <option value="レターパック">レターパック</option>
+                                    <option value ="普通郵便(定形、定形外)">普通郵便(定形、定形外)</option>
+                                    <option value ="クロネコヤマト">クロネコヤマト</option>
+                                    <option value ="ゆうパック">ゆうパック</option>
+                                    <option value= "クリックポスト">クリックポスト</option>
+                                    <option value ="ゆうパケット">ゆうパケット</option>
+                                  </select>
                                 </div>
                               </div>
                             </div>`
@@ -104,14 +104,14 @@ $(function(){
                             <span class="form-require">必須</span>
                             <div>
                               <div class="select-box">
-                                <i></i>
-                                  <select class="select-bar" name="item[d_way]" id="item_d_way">
-                                    <option>---</option>
-                                    <option value ="未定">未定</option>
-                                    <option value ="クロネコヤマト">クロネコヤマト</option>
-                                    <option value ="ゆうパック">ゆうパック</option>
-                                    <option value ="ゆうパケット">ゆうパケット</option>
-                                  </select>
+                                <i class="fa fa-chevron-down select-chevron"></i>
+                                <select class="select-bar" name="item[d_way]" id="item_d_way">
+                                  <option>---</option>
+                                  <option value ="未定">未定</option>
+                                  <option value ="クロネコヤマト">クロネコヤマト</option>
+                                  <option value ="ゆうパック">ゆうパック</option>
+                                  <option value ="ゆうパケット">ゆうパケット</option>
+                                </select>
                             </div>
                             </div>
                           </div>`

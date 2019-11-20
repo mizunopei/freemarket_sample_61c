@@ -40,7 +40,7 @@
                 %span.form-require 必須
                 %div
                   .select-box
-                    .i
+                    = fa_icon "chevron-down", class: "select-chevron"
                     = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},class: "select-bar"
 
               .form-group
@@ -48,7 +48,7 @@
                 %span.form-require 必須
                 %div
                   .select-box
-                    %i
+                    = fa_icon "chevron-down", class: "select-chevron"
                     = f.select :condition, [["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"], ["目立った傷や汚れあり", "目立った傷や汚れあり"], ["やや傷や汚れあり", "やや傷や汚れあり"], [" 傷や汚れあり", " 傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]] ,{prompt: "---"},class: "select-bar"
 
           .sell-content.clearfix
@@ -61,7 +61,7 @@
                 %span.form-require 必須
                 %div
                   .select-box
-                    %i
+                    = fa_icon "chevron-down", class: "select-chevron"
                     = f.select :d_burden,[["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]],{prompt: "---"},class: "d_burden select-bar"
               
               .form-group
@@ -69,7 +69,7 @@
                 %span.form-require 必須
                 %div
                   .select-box
-                    .i
+                    = fa_icon "chevron-down", class: "select-chevron"
                     = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"},class: "select-bar"
           
               .form-group
@@ -77,7 +77,7 @@
                 %span.form-require 必須
                 %div
                   .select-box
-                    .i
+                    = fa_icon "chevron-down", class: "select-chevron"
                     = f.select :d_date,[["1~2日で発送", "1~2日で発送"], ["2~3日で発送","2~3日で発送"],["4~7日で発送", "4~7日で発送"]],{prompt: "---"},class: "select-bar"
             
           .sell-content.clearfix
