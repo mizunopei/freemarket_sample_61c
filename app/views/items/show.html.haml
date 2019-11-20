@@ -11,8 +11,8 @@
               .owl-item
                 .owl-item-inner.is-higher-height
                   .owl-lazy
-                    - @images.each do |image| 
-                      = image_tag image
+                    - @images.each do |image|
+                      = image_tag image if @item.images.present?
           .item__samjej
             .owl-dots
               .owl-dot
@@ -20,7 +20,7 @@
                 .owl-dot-inner
                   .is-higher-height
                     - @images.each do |image|
-                      = image_tag image
+                      = image_tag image if @item.images.present?
         %table.item__detail__table
           %tbody
             %tr
