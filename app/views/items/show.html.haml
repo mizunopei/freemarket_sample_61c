@@ -140,13 +140,8 @@
           .icon-pinterest
             = fa_icon 'pinterest', class: "icon_pinterest"
   %nav.bread-crumbs.pos-bottom
-    %ul
-      %li{itemscope: "", itemtype: ""}
-        = link_to "#", itemprop: "url" do
-          %span{itemprop: "title"} メルカリ ‹
-      %li{itemscope: "", itemtype: ""}
-        %span{itemprop: "title"}
-          = @item.name      
+    - breadcrumb :show_item, @item 
+    = render "layouts/breadcrumbs"
 %aside
   .app__banner
     .app__banner__mine

@@ -37,6 +37,12 @@ crumb :logout do
   parent :users
 end
 
+#商品詳細
+crumb :show_item do |item|
+  link item.name, item_path
+  parent :root
+end
+
 
 # crumb :projects do
 #   link "Projects", projects_path
