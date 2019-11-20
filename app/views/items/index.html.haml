@@ -25,7 +25,7 @@
         .item__main__genre--sub
           = link_to "もっと見る", href: ""
       .items-box-content.clearfix.category-brand-list
-        - @items.each do |item|
+        - @mens_items.each do |item|
           %section.items-box
             = link_to item_path(item) do
               .items-box-photo
@@ -43,7 +43,7 @@
         .item__main__genre--sub
           = link_to "もっと見る", href: ""
       .items-box-content.clearfix.category-brand-list
-        - @items.each do |item|
+        - @kaden_items.each do |item|
           %section.items-box
             = link_to item_path(item) do
               .items-box-photo
@@ -57,11 +57,11 @@
     .item__main
       .item__main__genre
         %h3.item__main__genre--name
-          おもちゃ・ホビー・グッズ新着アイテム
+          本・音楽・ゲーム新着アイテム
         .item__main__genre--sub
           = link_to "もっと見る", href: ""
       .items-box-content.clearfix.category-brand-list
-        - @items.each do |item|
+        - @book_items.each do |item|
           %section.items-box
             = link_to item_path(item) do
               .items-box-photo
