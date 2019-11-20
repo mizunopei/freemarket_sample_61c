@@ -30,7 +30,7 @@ main {
 .item__main__content {
   float: left;
   width: 300px;
-//   height: 375px;
+  height: 375px;
   position: relative;
   margin: 0 auto;
   background: #fafafa;
@@ -56,7 +56,7 @@ main {
           height: 100%;
           position: relative;
           width: 100%;
-        //   overflow: hidden;
+          overflow: hidden;
           .owl-lazy {
             display: block;
             transition-duration: 0.9s;
@@ -64,6 +64,7 @@ main {
             height:300px;
             & img {
               width: 100%;
+              height: -webkit-fill-available;
             }
           }
         }
@@ -88,7 +89,6 @@ main {
     max-height: none;
     position: relative;
     display: inline-block; 
-    overflow: hidden; 
     .owl-dot-inner {
       cursor: pointer;
       .is-higher-height {

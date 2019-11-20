@@ -13,14 +13,14 @@
                   .owl-lazy
                     - @images.each do |image| 
                       = image_tag image
-          .item__samjej
-            .owl-dots
-              .owl-dot
-                %span
-                .owl-dot-inner
-                  .is-higher-height
-                    - @images.each do |image|
-                      = image_tag image
+              .item__samjej
+                .owl-dots
+                  .owl-dot
+                    %span
+                    .owl-dot-inner
+                      .is-higher-height
+                        - @images.each do |image|
+                          = image_tag image
         %table.item__detail__table
           %tbody
             %tr
