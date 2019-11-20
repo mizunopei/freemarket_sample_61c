@@ -16,7 +16,7 @@
           .item__box--search-genre
             家電・スマホ・カメラ
           .item__box--search-genre
-            おもちゃ・ホビー・グッズ
+            本・音楽・ゲーム
 
     .item__main
       .item__main__genre
@@ -29,7 +29,7 @@
           %section.items-box
             = link_to item_path(item) do
               .items-box-photo
-                = image_tag item.images[-1]
+                = image_tag item.images[-1] if item.images.present?
               .items-box-body
                 %h3.items-box-name.font-2
                   = item.name
@@ -47,7 +47,7 @@
           %section.items-box
             = link_to item_path(item) do
               .items-box-photo
-                = image_tag item.images[-1]
+                = image_tag item.images[-1] if item.images.present?
               .items-box-body
                 %h3.items-box-name.font-2
                   = item.name
@@ -65,7 +65,7 @@
           %section.items-box
             = link_to item_path(item) do
               .items-box-photo
-                = image_tag item.images[-1]
+                = image_tag item.images[-1] if item.images.present?
               .items-box-body
                 %h3.items-box-name.font-2
                   = item.name
