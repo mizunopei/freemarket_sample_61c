@@ -122,17 +122,28 @@
         float: right;
         width: 400px;
         margin: 0;
-        .select-bar{
-          z-index: 2;
-          height: 48px;
-          padding: 0 16px;
-          font-size: 16px;
-          cursor: pointer;
-          border-radius: 4px;
-          @include sell__box-border;
-          width: 100%;
-          background-color: $sell-white;
+        .select-box{
+          position: relative;
+          .select-chevron{
+            position: absolute;
+            z-index: 99;
+            right: 12px;
+            top: 15px;
+            color: #888;
+          }
+          .select-bar{
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            @include sell__box-border;
+            width: 100%;
+            background-color: $sell-white;
+          }
         }
+       
         .sell-price{
           & li{
             padding: 24px 0;
