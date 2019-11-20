@@ -9,5 +9,6 @@ FactoryBot.define do
     d_date          {"1"}
     price           {"2500"}
     category_id     {"1"}
+    user_id         {"1"}
   end
 end

@@ -3,7 +3,8 @@ require "rails_helper"
 describe Item do
   describe "#create" do
     it "商品名、商品の説明、商品の状態、配送料の負担、配送の方法、発送元の地域、発送までの日数、販売価格が入力されていれば登録できる" do
-      item = build(:item)
+      user = create(:user)
+      item = build(:item, user_id: user.id)
       expect(item).to be_valid
     end
 
@@ -69,4 +70,5 @@ describe Item do
 
 
   end
+
 end
