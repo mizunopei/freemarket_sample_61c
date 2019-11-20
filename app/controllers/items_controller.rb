@@ -5,7 +5,9 @@ class ItemsController < ApplicationController
   
 
   def index
-    @items = Item.limit(10).order('created_at DESC')
+    @mens_items = Item.where(category_id: "2").order('created_at DESC').limit(10)
+    @book_items = Item.where(category_id: "5").order('created_at DESC').limit(10)
+    @kaden_items = Item.where(category_id: "8").order('created_at DESC').limit(10)
   end
 
   def new
