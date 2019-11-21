@@ -20,7 +20,7 @@ class AddressesController < ApplicationController
       redirect_to new_card_path
     else
       render :new
-    end 
+    end
   end
 
   private

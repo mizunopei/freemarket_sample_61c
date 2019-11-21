@@ -1,5 +1,4 @@
 FactoryBot.define do
-
   factory :address do
     d_last_name       {"神南坂"}
     d_first_name      {"一郎"}
