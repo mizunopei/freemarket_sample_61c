@@ -1,8 +1,6 @@
 class ItemsController < ApplicationController
-
   before_action :redirect_signin, only: [:new, :pay_confirmation, :pay_complete] 
   before_action :buy_info, only: [:pay_confirmation, :pay_complete] 
-  
 
   def index
     @mens_items = Item.where(category_id: "2").order('created_at DESC').limit(10)
