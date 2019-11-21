@@ -39,20 +39,7 @@
     font-size: 14px;
     color: #000;
   }
-  .items-box-num {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin-top: 8px;
-  }
   .items-box-price {
-    z-index: 2;
     position: absolute;
     top: -35px;
     left: 0;
