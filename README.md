@@ -22,7 +22,7 @@
   * password: seller1234
 
 ## 使用技術
-* Ruby on Rails/MySQL/JavaScript/AWS
+* HTML(Haml)/CSS(SCSS)/Ruby on Rails/MySQL/JavaScript/AWS
 
 ## usersテーブル
 |Column|Type|Options|
